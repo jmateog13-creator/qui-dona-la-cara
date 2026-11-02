@@ -10,6 +10,15 @@ Activitat de tutoria sobre **Blocus** (octubre de 2026): perfils de TikTok i can
 
 **Espai** o **→** avança (i revela els vots), **←** torna enrere.
 
+### Enllaç fix per al Moodle
+
+Si obres la pantalla del profe amb un codi fix, la sala sempre té el mateix codi, i l'enllaç dels alumnes no canvia mai:
+
+- **Profe:** `index.html?codi=1234`
+- **Alumnes (al Moodle):** `movil.html?c=1234`. Entren directament, sense escriure res.
+
+Tria un número que no facin servir altres profes alhora.
+
 ## Estructura (uns 50 minuts)
 
 1. **Abans de res:** tres preguntes anònimes, sense respostes bones ni dolentes.

@@ -204,7 +204,8 @@ const MOVIL_URL = location.origin + location.pathname.replace(/[^/]*$/, '') + 'm
 const yo = DEMO ? 'demo-profe' : N.elMeuId();
 
 /* ---------- sala anònima: la pissarra compta, els mòbils només envien {k, r} ---------- */
-const sala = { codi: DEMO ? '0000' : N.nouCodi(), canal: null, presents: new Set(), vots: new Map(), revelats: new Set(), i: 0 };
+const CODI_FIX = (new URLSearchParams(location.search).get('codi') || '').match(/^\d{4}$/)?.[0];   // ?codi=1234: el mateix codi cada classe (per a l'enllaç del Moodle)
+const sala = { codi: DEMO ? '0000' : CODI_FIX || N.nouCodi(), canal: null, presents: new Set(), vots: new Map(), revelats: new Set(), i: 0 };
 const opcionsDe = p => p.tipus === 'missatge' ? C.trucs : p.tipus === 'escena' ? p.vot?.opcions : p.opcions;
 const votable = p => !!(p.tipus === 'escena' ? p.vot : opcionsDe(p));
 const votsDe = i => { if (!sala.vots.has(i)) sala.vots.set(i, new Map()); return sala.vots.get(i); };
@@ -348,7 +349,7 @@ const desaPropis = l => { try { localStorage.setItem(CLAU, JSON.stringify(l)); }
 const reels = () => [...(C.reels || []), ...propis()];
 function incrusta(u) {
   let m;
-  if ((m = u.match(/instagram\.com\/(?:reel|reels|p)\/([\w-]+)/))) return `<iframe src="https://www.instagram.com/reel/${m[1]}/embed" allowfullscreen loading="lazy" title="Reel d'Instagram"></iframe>`;
+  if ((m = u.match(/instagram\.com\/(?:[\w.]+\/)?(reels?|p|tv)\/([\w-]+)/))) return `<iframe src="https://www.instagram.com/${m[1] === 'p' ? 'p' : 'reel'}/${m[2]}/embed" allowfullscreen loading="lazy" title="Vídeo d'Instagram"></iframe>`;
   if ((m = u.match(/tiktok\.com\/.*\/video\/(\d+)/))) return `<iframe src="https://www.tiktok.com/embed/v2/${m[1]}" allowfullscreen loading="lazy" title="Vídeo de TikTok"></iframe>`;
   if ((m = u.match(/(?:youtu\.be\/|youtube\.com\/(?:shorts\/|watch\?v=|embed\/))([\w-]{11})/))) return `<iframe src="https://www.youtube-nocookie.com/embed/${m[1]}" allowfullscreen loading="lazy" title="Vídeo de YouTube" allow="autoplay; encrypted-media; picture-in-picture"></iframe>`;
   return `<div class="buit" style="aspect-ratio:9/16;display:grid;place-items:center">Aquest enllaç no es pot incrustar.<br>Obre'l amb el botó de sota.</div>`;
