@@ -31,17 +31,6 @@
       ]
     },
     {
-      "tipus": "pregunta",
-      "seccio": "Abans de res",
-      "titol": "Sense respostes bones ni dolentes",
-      "pregunta": "Creus que la majoria sabia en què s'estava ficant?",
-      "opcions": [
-        "Sí",
-        "Més o menys",
-        "No"
-      ]
-    },
-    {
       "tipus": "reels",
       "seccio": "Què va passar",
       "titol": "Què va passar",
@@ -72,19 +61,10 @@
       "font": "Fiscalia, recollit per Xataka (30 d'octubre de 2026)"
     },
     {
-      "tipus": "reels",
-      "seccio": "Què va passar",
-      "titol": "Així reclutaven",
-      "text": "Fixeu-vos en el camí: un vídeo, un cartell, un QR, un xat. És el que viurà el Pol.",
-      "reels": [
-        "https://www.instagram.com/newtral/reel/De15kXjMLH3/"
-      ]
-    },
-    {
       "tipus": "intro-historia",
       "seccio": "La història del Pol",
       "titol": "La història del Pol",
-      "text": "El Pol té 15 anys i fa 3r d'ESO. No existeix, però tot el que li passa ha passat de veritat. A l'esquerra, el que viu el Pol. A la dreta, el que fa, en aquell mateix moment, qui ho organitza."
+      "text": "El Pol té 15 anys i fa 3r d'ESO. No existeix, però el que li passa ha passat de veritat. A l'esquerra, el que viu el Pol. A la dreta, el que fa en aquell moment qui ho organitza."
     },
     {
       "tipus": "escena",
@@ -112,37 +92,14 @@
     {
       "tipus": "escena",
       "seccio": "La història del Pol",
-      "hora": "Dimecres · 17:15",
+      "hora": "Dimecres i dijous",
       "pol": {
-        "titol": "No estàs sol",
-        "text": "El QR el porta a un canal de Telegram amb més de 2.000 persones. Missatges sense parar: «Tots units», «Passa-ho a amics d'amics». El Pol sent que forma part d'una cosa gran."
+        "titol": "2.000 persones",
+        "text": "El QR el porta a un canal de Telegram amb més de 2.000 persones: «Tots units», «Passa-ho a amics d'amics». El Pol se sent part d'una cosa gran. L'endemà la plataforma el tanca… i cinc minuts després li arriba l'enllaç d'un de nou."
       },
       "org": {
-        "titol": "Comptar gent",
-        "text": "Mira com creix el comptador de membres. Com més gent, més creïble sembla. Només ha d'escriure de tant en tant."
-      },
-      "vot": {
-        "pregunta": "I ara, què fa el Pol?",
-        "opcions": [
-          "Es queda al canal",
-          "Silencia el canal",
-          "En surt"
-        ],
-        "real": 0,
-        "realText": "El Pol s'hi queda. I passa l'enllaç al grup de classe."
-      }
-    },
-    {
-      "tipus": "escena",
-      "seccio": "La història del Pol",
-      "hora": "Dijous · 10:02",
-      "pol": {
-        "titol": "Canal tancat",
-        "text": "La plataforma tanca el canal. Cinc minuts després, al Pol li arriba un enllaç a un de nou, amb el mateix nom i un número al final."
-      },
-      "org": {
-        "titol": "Tornar a començar",
-        "text": "Obre un canal nou en dos minuts. No li costa res. Si el tanquen, n'obrirà un altre."
+        "titol": "No li costa res",
+        "text": "Mira com creix el comptador: com més gent, més creïble sembla. Quan li tanquen el canal, n'obre un altre en dos minuts."
       }
     },
     {
@@ -174,11 +131,11 @@
       "hora": "Divendres · 18:40",
       "pol": {
         "titol": "Al carrer",
-        "text": "Fum, crits, un aparador trencat. Algú del costat surt d'una botiga amb una caixa. El Pol porta la màscara i grava amb el mòbil. Arriben els antiavalots."
+        "text": "Fum, crits, un aparador trencat. Algú surt d'una botiga amb una caixa. El Pol porta la màscara i grava amb el mòbil. Arriben els antiavalots."
       },
       "org": {
-        "titol": "Mirant-ho",
-        "text": "Mira els vídeos que penja la gent. Esborra els missatges del canal."
+        "titol": "Des de casa",
+        "text": "Mira els vídeos que penja la gent, esborra els missatges i obre un canal nou: «Això només és el començament»."
       },
       "vot": {
         "pregunta": "Què fa el Pol?",
@@ -188,20 +145,7 @@
           "Ajuda un amic que s'ha fet mal"
         ],
         "real": 1,
-        "realText": "El Pol es queda gravant uns minuts més."
-      }
-    },
-    {
-      "tipus": "escena",
-      "seccio": "La història del Pol",
-      "hora": "Divendres · 21:15",
-      "pol": {
-        "titol": "Detingut",
-        "text": "El Pol és detingut. La màscara no ha servit de res: el seu mòbil és ple de vídeos d'aquella tarda, i hi ha càmeres a tot el carrer."
-      },
-      "org": {
-        "titol": "Un canal nou",
-        "text": "Obre un canal nou. Escriu: «Això només és el començament»."
+        "realText": "El Pol es queda gravant uns minuts més. I el detenen: la màscara no ha servit de res, el mòbil és ple de vídeos i hi ha càmeres a tot el carrer."
       }
     },
     {
@@ -247,8 +191,8 @@
     {
       "tipus": "cartell",
       "seccio": "Els cartells",
-      "titol": "Qui ha fet aquest cartell?",
-      "pregunta": "Qui creus que hi ha darrere d'un cartell així?",
+      "titol": "Els cartells",
+      "pregunta": "Aquests cartells van circular de veritat. Qui creus que els va fer?",
       "opcions": [
         "Un grup gran i organitzat",
         "Unes quantes persones",
@@ -263,22 +207,14 @@
         "Cap autor, cap entitat, cap contacte",
         "Un QR que porta a un xat anònim"
       ],
-      "font": "Xataka, 30 d'octubre de 2026"
-    },
-    {
-      "tipus": "reels",
-      "seccio": "Els cartells",
-      "titol": "Els cartells de veritat",
-      "text": "Ara, cartells reals que van circular. Busqueu-hi els senyals d'IA que acabem de veure.",
-      "reels": [
-        "https://www.instagram.com/newtral/p/De9SxHPjOJM/"
-      ]
+      "font": "Xataka, 30 d'octubre de 2026",
+      "reel": "https://www.instagram.com/newtral/p/De9SxHPjOJM/"
     },
     {
       "tipus": "reels",
       "seccio": "Qui hi guanya?",
       "titol": "Qui hi ha darrere?",
-      "text": "Abans de mirar les hipòtesis, què en sabem.",
+      "text": "Abans de les hipòtesis, què en sabem. Un vídeo de Newtral.",
       "reels": [
         "https://www.instagram.com/newtral/reel/DfHidNhMdQO/"
       ]
@@ -323,25 +259,15 @@
         "No ho sé"
       ],
       "tancament": "Fixeu-vos que partits de colors diferents s'han acusat els uns als altres. Quan no se sap qui hi ha darrere, guanya qui aconsegueix que culpem algú sense proves.",
-      "font": "Xataka, Metrópoli Abierta i Infobae, octubre de 2026"
-    },
-    {
-      "tipus": "culpables",
-      "seccio": "Qui hi guanya?",
-      "titol": "Compte amb els culpables fàcils",
-      "text": "Després d'uns disturbis sovint circulen missatges que culpen tot un col·lectiu: els immigrants, «els de tal barri», «els joves». Moltes vegades, sense cap prova.",
-      "preguntes": [
-        "Qui ho diu?",
-        "Amb quina prova?",
-        "A qui li convé que ho cregui?"
-      ],
-      "frase": "Assenyalar un col·lectiu és més fàcil que buscar qui ho ha organitzat de veritat."
-    },
-    {
-      "tipus": "intro-missatges",
-      "seccio": "Desmunta el missatge",
-      "titol": "Desmunta el missatge",
-      "text": "Sis missatges inventats, a l'estil dels que circulaven. Cadascun fa servir un truc. Endevineu quin."
+      "font": "Xataka, Metrópoli Abierta i Infobae, octubre de 2026",
+      "culpables": {
+        "text": "Després d'uns disturbis sovint circulen missatges que culpen tot un col·lectiu: els immigrants, «els de tal barri», «els joves». Moltes vegades, sense cap prova.",
+        "preguntes": [
+          "Qui ho diu?",
+          "Amb quina prova?",
+          "A qui li convé que ho cregui?"
+        ]
+      }
     },
     {
       "tipus": "missatge",
@@ -349,13 +275,6 @@
       "text": "Divendres o mai. Si no ho fem ara, no ho farem.",
       "correcta": 0,
       "explicacio": "Pressa: si no hi ha temps per pensar, no penses."
-    },
-    {
-      "tipus": "missatge",
-      "seccio": "Desmunta el missatge",
-      "text": "Ens roben el futur i encara volen que callem.",
-      "correcta": 1,
-      "explicacio": "Un enemic difús («ells») que tothom pot omplir amb la seva ràbia."
     },
     {
       "tipus": "missatge",
@@ -376,20 +295,7 @@
       "seccio": "Desmunta el missatge",
       "text": "Roba negra i màscara. Ningú no sabrà qui ets.",
       "correcta": 4,
-      "explicacio": "Falsa sensació d'anonimat. El mòbil, les càmeres i els amics sí que ho saben."
-    },
-    {
-      "tipus": "missatge",
-      "seccio": "Desmunta el missatge",
-      "text": "Passa-ho a amics d'amics. Que corri.",
-      "correcta": 5,
-      "explicacio": "Et converteixen en altaveu. Qui ho reenvia fa la feina de qui ho organitza."
-    },
-    {
-      "tipus": "mateixos",
-      "seccio": "Desmunta el missatge",
-      "titol": "Els mateixos trucs de sempre",
-      "text": "Pressa, enemic comú, «som molts», premi, anonimat i «passa-ho». Són els mateixos trucs de les estafes per missatge i del control en parella. Si els reconeixes en un lloc, els reconeixeràs a tot arreu."
+      "explicacio": "Falsa sensació d'anonimat. Recordeu el Pol: el mòbil i les càmeres sí que sabien qui era."
     },
     {
       "tipus": "pregunta",
@@ -413,7 +319,8 @@
         "Pots sortir d'un grup sense donar explicacions",
         "Parla-ho amb algú de confiança",
         "Denuncia el compte a la plataforma"
-      ]
+      ],
+      "trucs": "Pressa, «som molts», premis i falsa sensació d'anonimat: són els mateixos trucs que fan servir les estafes per missatge."
     },
     {
       "tipus": "fonts",

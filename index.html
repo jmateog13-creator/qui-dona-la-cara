@@ -258,6 +258,10 @@ function barres(i, { bona = null, real = null } = {}) {
 const opsHTML = (o, cls = '') => `<div class="ops ${cls}">${o.map((x, k) => `<div class="op"><span class="ll">${LL[k]}</span><span>${esc(x)}</span></div>`).join('')}</div>`;
 const votOResultat = (i, extra = {}) => sala.revelats.has(i) ? barres(i, extra) : opsHTML(opcionsDe(P[i]), extra.cls || '');
 
+const cartellDreta = (p, i) => `<p class="pregunta" style="font-size:clamp(24px,2.4vw,34px)">${esc(p.pregunta)}</p>
+  ${votOResultat(i)}
+  ${sala.revelats.has(i) ? `<p class="revela">${esc(p.resposta)}</p><span class="seccio">Com reconèixer un cartell fet amb IA</span><ul class="senyals">${p.senyals.map(s => `<li>${esc(s)}</li>`).join('')}</ul><p class="font">Font: ${esc(p.font)}</p>` : ''}`;
+
 const RENDER = {
   portada: () => `<div class="portada entra">
       <div style="display:flex;flex-direction:column;gap:20px">
@@ -291,28 +295,24 @@ const RENDER = {
     <tbody>${p.files.map(f => `<tr class="entra"><td>${esc(f[0])}</td><td>${esc(f[1])}</td><td>${esc(f[2])}</td></tr>`).join('')}</tbody></table>`,
   cartell: (p, i) => `<h2 class="titol-mig">${esc(p.titol)}</h2>
     <div class="cartell-grid">
-      <div class="cartell" aria-label="Cartell d'exemple inventat"><span class="etiq">EXEMPLE INVENTAT</span>
+      ${p.reel ? `<div class="reel">${incrusta(p.reel)}<div class="acc"><a href="${esc(p.reel)}" target="_blank" rel="noopener">Obrir l'original ↗</a></div></div>` : `<div class="cartell" aria-label="Cartell d'exemple inventat"><span class="etiq">EXEMPLE INVENTAT</span>
         <div class="t"><span>BLOQUE</span><br><span>JEM-HO</span><br><span>TOOT</span></div>
-        <div class="baix"><span class="s">24·10 · 18H<br>TOTS UNITS 🔥</span><span class="qrfals"></span></div></div>
-      <div style="display:flex;flex-direction:column;gap:16px">
-        <p class="pregunta" style="font-size:clamp(24px,2.4vw,34px)">${esc(p.pregunta)}</p>
-        ${votOResultat(i)}
-        ${sala.revelats.has(i) ? `<p class="revela">${esc(p.resposta)}</p><span class="seccio">Com reconèixer un cartell fet amb IA</span><ul class="senyals">${p.senyals.map(s => `<li>${esc(s)}</li>`).join('')}</ul><p class="font">Font: ${esc(p.font)}</p>` : ''}
-      </div>
+        <div class="baix"><span class="s">24·10 · 18H<br>TOTS UNITS 🔥</span><span class="qrfals"></span></div></div>`}
+      <div id="cartell-dreta" style="display:flex;flex-direction:column;gap:16px">${cartellDreta(p, i)}</div>
     </div>`,
   hipotesis: (p, i) => `<h2 class="titol-mig">${esc(p.titol)}</h2><p class="lede">${esc(p.intro)}</p>
     <div class="cartes">${p.cartes.map(c => `<div class="carta"><h3>${esc(c.nom)}</h3><p>${esc(c.text)}</p><p class="sap"><b>Se sap:</b> ${esc(c.sap)}</p><p class="nosap"><b>No se sap:</b> ${esc(c.nosap)}</p></div>`).join('')}</div>
     <p class="pregunta" style="font-size:clamp(22px,2.2vw,30px)">${esc(p.pregunta)}</p>
-    ${sala.revelats.has(i) ? barres(i) + `<p class="revela">${esc(p.tancament)}</p><p class="font">Fonts: ${esc(p.font)}</p>` : opsHTML(p.opcions, 'trucs')}`,
+    ${sala.revelats.has(i) ? barres(i) + `<p class="revela">${esc(p.tancament)}</p>` + (p.culpables ? `<h3 style="font-size:clamp(24px,2.4vw,34px)">Compte amb els culpables fàcils</h3><p class="lede">${esc(p.culpables.text)}</p><div class="tres">${p.culpables.preguntes.map(q => `<div class="entra">${esc(q)}</div>`).join('')}</div>` : '') + `<p class="font">Fonts: ${esc(p.font)}</p>` : opsHTML(p.opcions, 'trucs')}`,
   culpables: p => `<h2 class="titol-mig">${esc(p.titol)}</h2><p class="lede">${esc(p.text)}</p>
     <div class="tres">${p.preguntes.map(q => `<div class="entra">${esc(q)}</div>`).join('')}</div><p class="frase">${esc(p.frase)}</p>`,
   'intro-missatges': p => `<h1 class="titol-gran">${esc(p.titol)}</h1><p class="lede">${esc(p.text)}</p>${opsHTML(C.trucs, 'trucs')}`,
-  missatge: (p, i) => `<div class="bombolla entra"><small>Canal · reenviat</small>${esc(p.text)}</div>
+  missatge: (p, i) => `<div class="bombolla entra"><small>Canal · reenviat · missatge inventat</small>${esc(p.text)}</div>
     <p class="pregunta" style="font-size:clamp(22px,2.2vw,30px)">Quin truc fa servir?</p>
     ${votOResultat(i, { bona: p.correcta, cls: 'trucs' })}
     ${sala.revelats.has(i) ? `<p class="revela ok">${esc(p.explicacio)}</p>` : ''}`,
   mateixos: p => `<h1 class="titol-gran">${esc(p.titol)}</h1><p class="lede" style="color:var(--tinta)">${esc(p.text)}</p>`,
-  final: p => `<h1 class="titol-gran" style="max-width:20ch">${esc(p.titol)}</h1><span class="seccio">Si et passa a tu</span><div class="consells">${p.consells.map(c => `<div class="entra">${esc(c)}</div>`).join('')}</div>`,
+  final: p => `<h1 class="titol-gran" style="max-width:20ch">${esc(p.titol)}</h1>${p.trucs ? `<p class="lede">${esc(p.trucs)}</p>` : ''}<span class="seccio">Si et passa a tu</span><div class="consells">${p.consells.map(c => `<div class="entra">${esc(c)}</div>`).join('')}</div>`,
   fonts: p => `<h2 class="titol-mig">${esc(p.titol)}</h2><div class="fonts">${p.fonts.map(f => `<a href="${esc(f[2])}" target="_blank" rel="noopener"><b>${esc(f[0])}</b>${esc(f[1])}</a>`).join('')}</div>`,
 };
 
@@ -320,7 +320,9 @@ function pinta() {
   const i = sala.i, p = P[i];
   $('#seccio').textContent = p.seccio || 'Tutoria';
   $('#punts').innerHTML = P.map((_, k) => `<i class="${k < i ? 'fet' : k === i ? 'ara' : ''}"></i>`).join('');
-  $('#escenari').innerHTML = RENDER[p.tipus](p, i);
+  if (p.tipus === 'cartell' && pinta.darrer === i && $('#cartell-dreta')) $('#cartell-dreta').innerHTML = cartellDreta(p, i);   // el carrusel no es recarrega
+  else $('#escenari').innerHTML = RENDER[p.tipus](p, i);
+  pinta.darrer = i;
   if (p.tipus === 'portada') { const q = $('#qr'); if (window.QRCode && q) new QRCode(q, { text: `${MOVIL_URL}?c=${sala.codi}`, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M }); }
   requestAnimationFrame(() => requestAnimationFrame(() => document.querySelectorAll('i[data-w]').forEach(e => e.style.width = e.dataset.w + '%')));
   const pendent = votable(p) && !sala.revelats.has(i);
