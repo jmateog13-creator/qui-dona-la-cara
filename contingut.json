@@ -1,12 +1,6 @@
 {
   "versio": 1,
-  "reels": [
-    "https://www.instagram.com/newtral/reel/DfHidNhMdQO/",
-    "https://www.instagram.com/newtral/reel/De_uJOAsmSB/",
-    "https://www.instagram.com/newtral/p/De9SxHPjOJM/",
-    "https://www.instagram.com/newtral/reel/De9JujDRDIF/",
-    "https://www.instagram.com/newtral/reel/De15kXjMLH3/"
-  ],
+  "reels": [],
   "passos": [
     {
       "tipus": "portada"
@@ -50,7 +44,11 @@
     {
       "tipus": "reels",
       "seccio": "Què va passar",
-      "titol": "Què va passar"
+      "titol": "Què va passar",
+      "text": "Primer, què és Blocus. Un vídeo de Newtral.",
+      "reels": [
+        "https://www.instagram.com/newtral/reel/De_uJOAsmSB/"
+      ]
     },
     {
       "tipus": "dades",
@@ -72,6 +70,15 @@
       ],
       "frase": "La majoria no eren «delinqüents»: eren nois i noies com els d'aquesta classe.",
       "font": "Fiscalia, recollit per Xataka (30 d'octubre de 2026)"
+    },
+    {
+      "tipus": "reels",
+      "seccio": "Què va passar",
+      "titol": "Així reclutaven",
+      "text": "Fixeu-vos en el camí: un vídeo, un cartell, un QR, un xat. És el que viurà el Pol.",
+      "reels": [
+        "https://www.instagram.com/newtral/reel/De15kXjMLH3/"
+      ]
     },
     {
       "tipus": "intro-historia",
@@ -259,9 +266,27 @@
       "font": "Xataka, 30 d'octubre de 2026"
     },
     {
-      "tipus": "hipotesis",
+      "tipus": "reels",
+      "seccio": "Els cartells",
+      "titol": "Els cartells de veritat",
+      "text": "Ara, cartells reals que van circular. Busqueu-hi els senyals d'IA que acabem de veure.",
+      "reels": [
+        "https://www.instagram.com/newtral/p/De9SxHPjOJM/"
+      ]
+    },
+    {
+      "tipus": "reels",
       "seccio": "Qui hi guanya?",
       "titol": "Qui hi ha darrere?",
+      "text": "Abans de mirar les hipòtesis, què en sabem.",
+      "reels": [
+        "https://www.instagram.com/newtral/reel/DfHidNhMdQO/"
+      ]
+    },
+    {
+      "tipus": "hipotesis",
+      "seccio": "Qui hi guanya?",
+      "titol": "Quatre hipòtesis",
       "intro": "Ningú no ho sap del cert. Aquestes són les hipòtesis que s'han publicat. Mireu què se sap i què no.",
       "cartes": [
         {

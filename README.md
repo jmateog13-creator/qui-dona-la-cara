@@ -32,13 +32,16 @@ Tria un número que no facin servir altres profes alhora.
 
 ## Reels
 
-A la pantalla «Què va passar», enganxa l'enllaç d'un reel d'**Instagram**, **TikTok** o **YouTube** i prem **Afegir reel**. Es queda guardat en aquell navegador.
+Els reels de Newtral són repartits on tenen sentit, cadascun a la seva pantalla:
 
-Per fixar-los per a tothom, posa'ls a `contingut.json`, a la llista `"reels"`:
+| Pantalla | Reel |
+|---|---|
+| Què va passar | Què és Blocus i què passa amb les protestes |
+| Així reclutaven (abans de la història del Pol) | Perfils de TikTok recluten joves |
+| Els cartells de veritat (després del cartell inventat) | Noves convocatòries del 31 d'octubre |
+| Qui hi ha darrere? (abans de les hipòtesis) | Qui hi ha darrere de Blocus Barcelona? |
 
-```json
-"reels": ["https://www.instagram.com/reel/XXXX/", "https://www.tiktok.com/@newtral/video/123"]
-```
+A cada pantalla de reels pots **afegir-ne** un altre enganxant l'enllaç (Instagram, TikTok o YouTube). Es guarda en aquell navegador. Per fixar-los per a tothom, posa'ls a `contingut.json`, al camp `"reels"` de la pantalla corresponent.
 
 ## Criteris de contingut
 
