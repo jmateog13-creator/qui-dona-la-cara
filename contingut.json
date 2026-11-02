@@ -1,0 +1,130 @@
+{
+  "versio": 1,
+  "reels": [],
+  "passos": [
+    { "tipus": "portada" },
+
+    { "tipus": "pregunta", "seccio": "Abans de res", "titol": "Sense respostes bones ni dolentes",
+      "pregunta": "Has vist vídeos o missatges de Blocus?",
+      "opcions": ["Sí, molts", "Algun", "No, cap"] },
+    { "tipus": "pregunta", "seccio": "Abans de res", "titol": "Sense respostes bones ni dolentes",
+      "pregunta": "Per què creus que hi va anar la gent?",
+      "opcions": ["Per diversió", "Per ràbia", "Per sentir-se part d'alguna cosa", "Per endur-se coses", "Perquè hi anaven els amics", "No ho sé"] },
+    { "tipus": "pregunta", "seccio": "Abans de res", "titol": "Sense respostes bones ni dolentes",
+      "pregunta": "Creus que la majoria sabia en què s'estava ficant?",
+      "opcions": ["Sí", "Més o menys", "No"] },
+
+    { "tipus": "reels", "seccio": "Què va passar", "titol": "Què va passar" },
+
+    { "tipus": "dades", "seccio": "Què va passar", "titol": "Les dades",
+      "xifres": [
+        { "n": "+130", "text": "detinguts als disturbis de Barcelona" },
+        { "n": "89", "text": "eren menors d'edat" },
+        { "n": "2", "text": "dels primers 128 detinguts tenien antecedents" }
+      ],
+      "frase": "La majoria no eren «delinqüents»: eren nois i noies com els d'aquesta classe.",
+      "font": "Fiscalia, recollit per Xataka (30 d'octubre de 2026)" },
+
+    { "tipus": "intro-historia", "seccio": "La història del Pol", "titol": "La història del Pol",
+      "text": "El Pol té 15 anys i fa 3r d'ESO. No existeix, però tot el que li passa ha passat de veritat. A l'esquerra, el que viu el Pol. A la dreta, el que fa, en aquell mateix moment, qui ho organitza." },
+
+    { "tipus": "escena", "seccio": "La història del Pol", "hora": "Dimarts · 21:40",
+      "pol": { "titol": "Un vídeo més", "text": "El Pol fa scroll al llit. Li surt un vídeo amb música èpica: «França ho ha fet. Ara ens toca a nosaltres 🔥». Al final, un cartell amb un codi QR." },
+      "org": { "titol": "30 segons", "text": "A casa, amb el portàtil. Demana un cartell a una IA, l'enganxa en un vídeo i el penja des d'un compte acabat d'obrir. Cap nom real." },
+      "vot": { "pregunta": "Què faries tu, si fossis el Pol?", "opcions": ["Escanejo el QR", "Passo al vídeo següent", "L'envio al grup d'amics"], "real": 0, "realText": "El Pol escaneja el QR. «Només per mirar què és.»" } },
+
+    { "tipus": "escena", "seccio": "La història del Pol", "hora": "Dimecres · 17:15",
+      "pol": { "titol": "No estàs sol", "text": "El QR el porta a un canal de Telegram amb més de 2.000 persones. Missatges sense parar: «Tots units», «Passa-ho a amics d'amics». El Pol sent que forma part d'una cosa gran." },
+      "org": { "titol": "Comptar gent", "text": "Mira com creix el comptador de membres. Com més gent, més creïble sembla. Només ha d'escriure de tant en tant." },
+      "vot": { "pregunta": "I ara, què fa el Pol?", "opcions": ["Es queda al canal", "Silencia el canal", "En surt"], "real": 0, "realText": "El Pol s'hi queda. I passa l'enllaç al grup de classe." } },
+
+    { "tipus": "escena", "seccio": "La història del Pol", "hora": "Dijous · 10:02",
+      "pol": { "titol": "Canal tancat", "text": "La plataforma tanca el canal. Cinc minuts després, al Pol li arriba un enllaç a un de nou, amb el mateix nom i un número al final." },
+      "org": { "titol": "Tornar a començar", "text": "Obre un canal nou en dos minuts. No li costa res. Si el tanquen, n'obrirà un altre." } },
+
+    { "tipus": "escena", "seccio": "La història del Pol", "hora": "Divendres · 13:30",
+      "pol": { "titol": "La convocatòria", "text": "«Divendres a les 18 h. Roba negra i màscara. Detalls al xat privat.» I a sota: «No voleu tornar a casa amb iPhones?». Els amics del Pol diuen que hi aniran." },
+      "org": { "titol": "Des del sofà", "text": "Escriu la convocatòria. Ell no hi anirà: no li cal." },
+      "vot": { "pregunta": "Què fa el Pol?", "opcions": ["Hi va", "Hi va, però només a mirar", "No hi va"], "real": 1, "realText": "El Pol hi va. «Només a mirar», es diu." } },
+
+    { "tipus": "escena", "seccio": "La història del Pol", "hora": "Divendres · 18:40",
+      "pol": { "titol": "Al carrer", "text": "Fum, crits, un aparador trencat. Algú del costat surt d'una botiga amb una caixa. El Pol porta la màscara i grava amb el mòbil. Arriben els antiavalots." },
+      "org": { "titol": "Mirant-ho", "text": "Mira els vídeos que penja la gent. Esborra els missatges del canal." },
+      "vot": { "pregunta": "Què fa el Pol?", "opcions": ["Marxa corrent", "Es queda gravant", "Ajuda un amic que s'ha fet mal"], "real": 1, "realText": "El Pol es queda gravant uns minuts més." } },
+
+    { "tipus": "escena", "seccio": "La història del Pol", "hora": "Divendres · 21:15",
+      "pol": { "titol": "Detingut", "text": "El Pol és detingut. La màscara no ha servit de res: el seu mòbil és ple de vídeos d'aquella tarda, i hi ha càmeres a tot el carrer." },
+      "org": { "titol": "Un canal nou", "text": "Obre un canal nou. Escriu: «Això només és el començament»." } },
+
+    { "tipus": "escena", "seccio": "La història del Pol", "hora": "Les setmanes següents",
+      "pol": { "titol": "Les conseqüències", "text": "Com que és menor, el seu cas va a la Fiscalia de Menors. Pot haver de complir una mesura, com tasques socioeducatives o llibertat vigilada. I els seus pares poden haver de pagar els danys." },
+      "org": { "titol": "Anònim", "text": "Molts organitzadors no han estat identificats. Un dels principals instigadors, un jove de 20 anys, sí que ha estat detingut." } },
+
+    { "tipus": "comparativa", "seccio": "La història del Pol", "titol": "Qui ha donat la cara?",
+      "files": [
+        ["On era el divendres a les 18 h?", "Al carrer", "A casa"],
+        ["Qui hi va posar la cara?", "Ell", "Ningú"],
+        ["Què s'hi ha jugat?", "El seu expedient i els diners dels pares", "Res, o molt poc"],
+        ["Què ha guanyat?", "Res", "Atenció, caos… o el que buscés"]
+      ] },
+
+    { "tipus": "cartell", "seccio": "Els cartells", "titol": "Qui ha fet aquest cartell?",
+      "pregunta": "Qui creus que hi ha darrere d'un cartell així?",
+      "opcions": ["Un grup gran i organitzat", "Unes quantes persones", "Una sola persona", "No es pot saber"],
+      "resposta": "No es pot saber. I aquesta és la trampa: amb una IA, una sola persona pot fer en 30 segons un cartell que sembla d'un gran moviment. La policia va trobar un perfil d'uns cent seguidors que difonia el cartell del dia 24.",
+      "senyals": [
+        "Lletres deformades o paraules mal escrites",
+        "Mans, cares o objectes estranys",
+        "Estètica «perfecta» i genèrica, sense res concret",
+        "Cap autor, cap entitat, cap contacte",
+        "Un QR que porta a un xat anònim"
+      ],
+      "font": "Xataka, 30 d'octubre de 2026" },
+
+    { "tipus": "hipotesis", "seccio": "Qui hi guanya?", "titol": "Qui hi ha darrere?",
+      "intro": "Ningú no ho sap del cert. Aquestes són les hipòtesis que s'han publicat. Mireu què se sap i què no.",
+      "cartes": [
+        { "nom": "Efecte mirall", "text": "Una còpia del que passava a França, que l'algoritme va fer créixer. La por de perdre-s'ho (FOMO) va fer la resta.", "sap": "Els Mossos assenyalen el FOMO i l'«efecte mirall» de França com a motor.", "nosap": "Si algú ho va empènyer a propòsit." },
+        { "nom": "Oportunisme", "text": "Gent que volia saquejar i va aprofitar la convocatòria.", "sap": "Els missatges acabaven prometent coses de marca i mòbils.", "nosap": "Si era l'objectiu des del principi." },
+        { "nom": "Ultradreta", "text": "Sembrar el caos perquè tota protesta sembli violència, i que la gent busqui culpables.", "sap": "És la primera hipòtesi que s'ha apuntat. El Govern espanyol assenyala el seu entorn, sense atribuir-ho a cap partit.", "nosap": "No consta cap vincle públic demostrat." },
+        { "nom": "Injerència estrangera", "text": "Un altre país que vol desestabilitzar.", "sap": "Se n'ha parlat en alguns mitjans.", "nosap": "La Policia Nacional diu que no veu injerència de cap país." }
+      ],
+      "pregunta": "Quina et sembla més probable?",
+      "opcions": ["Efecte mirall", "Oportunisme", "Ultradreta", "Injerència estrangera", "No ho sé"],
+      "tancament": "Fixeu-vos que partits de colors diferents s'han acusat els uns als altres. Quan no se sap qui hi ha darrere, guanya qui aconsegueix que culpem algú sense proves.",
+      "font": "Xataka, Metrópoli Abierta i Infobae, octubre de 2026" },
+
+    { "tipus": "culpables", "seccio": "Qui hi guanya?", "titol": "Compte amb els culpables fàcils",
+      "text": "Després d'uns disturbis sovint circulen missatges que culpen tot un col·lectiu: els immigrants, «els de tal barri», «els joves». Moltes vegades, sense cap prova.",
+      "preguntes": ["Qui ho diu?", "Amb quina prova?", "A qui li convé que ho cregui?"],
+      "frase": "Assenyalar un col·lectiu és més fàcil que buscar qui ho ha organitzat de veritat." },
+
+    { "tipus": "intro-missatges", "seccio": "Desmunta el missatge", "titol": "Desmunta el missatge",
+      "text": "Sis missatges inventats, a l'estil dels que circulaven. Cadascun fa servir un truc. Endevineu quin." },
+    { "tipus": "missatge", "seccio": "Desmunta el missatge", "text": "Divendres o mai. Si no ho fem ara, no ho farem.", "correcta": 0, "explicacio": "Pressa: si no hi ha temps per pensar, no penses." },
+    { "tipus": "missatge", "seccio": "Desmunta el missatge", "text": "Ens roben el futur i encara volen que callem.", "correcta": 1, "explicacio": "Un enemic difús («ells») que tothom pot omplir amb la seva ràbia." },
+    { "tipus": "missatge", "seccio": "Desmunta el missatge", "text": "Ja som més de 2.000. No estàs sol.", "correcta": 2, "explicacio": "Sentir-se part d'una cosa gran. Però 2.000 membres d'un canal no són 2.000 persones al carrer." },
+    { "tipus": "missatge", "seccio": "Desmunta el missatge", "text": "Tornareu a casa amb el que vulgueu 😏", "correcta": 3, "explicacio": "Una promesa de premi. Qui la fa no correrà cap risc per complir-la." },
+    { "tipus": "missatge", "seccio": "Desmunta el missatge", "text": "Roba negra i màscara. Ningú no sabrà qui ets.", "correcta": 4, "explicacio": "Falsa sensació d'anonimat. El mòbil, les càmeres i els amics sí que ho saben." },
+    { "tipus": "missatge", "seccio": "Desmunta el missatge", "text": "Passa-ho a amics d'amics. Que corri.", "correcta": 5, "explicacio": "Et converteixen en altaveu. Qui ho reenvia fa la feina de qui ho organitza." },
+    { "tipus": "mateixos", "seccio": "Desmunta el missatge", "titol": "Els mateixos trucs de sempre",
+      "text": "Pressa, enemic comú, «som molts», premi, anonimat i «passa-ho». Són els mateixos trucs de les estafes per missatge i del control en parella. Si els reconeixes en un lloc, els reconeixeràs a tot arreu." },
+
+    { "tipus": "pregunta", "seccio": "Per acabar", "titol": "El primer dia",
+      "pregunta": "Què li diries al Pol el primer dia, quan va veure el vídeo?",
+      "opcions": ["Que no escanegi el QR", "Que pregunti qui hi ha darrere", "Que en parli amb algú", "Que hi vagi, però amb compte", "Res, és cosa seva"] },
+
+    { "tipus": "final", "seccio": "Per acabar", "titol": "Qui et demana que donis la cara no hi posa mai la seva.",
+      "consells": ["No reenviïs el que no saps d'on ve", "Pots sortir d'un grup sense donar explicacions", "Parla-ho amb algú de confiança", "Denuncia el compte a la plataforma"] },
+
+    { "tipus": "fonts", "seccio": "Fonts", "titol": "Fonts",
+      "fonts": [
+        ["Newtral", "Perfils de TikTok recluten joves per replicar els disturbis de França (23-10-2026)", "https://www.newtral.es/perfiles-tiktok-reclutan-jovenes-disturbios-madrid-barcelona-24-octubre-francia/20261023/"],
+        ["Newtral", "Detingut el principal instigador de Blocus (30-10-2026)", "https://www.newtral.es/detenido-lider-blocus-fuck-aeat/20261030/"],
+        ["Xataka", "Detenen un dels caps de Blocus (dades de detinguts, cartells amb IA i hipòtesis)", "https://www.xataka.com/magnet/mossos-piden-ayuda-al-ministerio-interior-cierre-todas-cuentas-blocus-detienen-al-creador-blocus-vlc"],
+        ["Metrópoli Abierta", "Els Mossos veuen en el FOMO i l'efecte mirall de França el motor dels disturbis", "https://metropoliabierta.elespanol.com/sucesos/20261030/mossos-ven-fomo-efecto-espejo-francia-motor-disturbios-violentos-blocus-barcelona/1003742807749_0.html"],
+        ["Infobae", "Blocus i els seus canals de Telegram i comptes de TikTok (27-10-2026)", "https://www.infobae.com/espana/2026/10/27/blocus-y-sus-canales-de-telegram-y-cuentas-de-tiktok-infinitos-para-convocar-los-disturbios-mis-informantes-me-diran-tiendas-sin-azules/"]
+      ] }
+  ],
+  "trucs": ["Pressa", "Enemic comú", "«Som molts»", "Promesa de premi", "Anonimat", "«Passa-ho»"]
+}

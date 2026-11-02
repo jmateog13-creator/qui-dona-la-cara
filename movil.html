@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f0f10">
+<title>Qui dona la cara? · Votar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,800..900&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@700&display=swap">
+<style>
+:root{--fons:#0f0f10;--placa:#1a1a1d;--placa2:#242428;--linia:#323238;--tinta:#f4f4f2;--suau:#a7a7ad;--fosc:#0f0f10;--pol:#f5d90a;--ok:#3ecf8e;
+  --display:"Archivo",ui-sans-serif,system-ui,sans-serif;--text:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0}
+body{background:var(--fons);color:var(--tinta);font:400 17px/1.45 var(--text);padding:env(safe-area-inset-top,0px) 16px env(safe-area-inset-bottom,0px);display:flex;flex-direction:column}
+button,input{font:inherit;color:inherit}
+h1,h2{font-family:var(--display);font-weight:900;font-stretch:110%;margin:0;line-height:1.05;text-wrap:balance}
+p{margin:0}
+.barra{display:flex;justify-content:space-between;align-items:center;padding-block:12px;min-height:50px;font:700 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--suau)}
+.pantalla{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:16px;padding-block:16px 28px}
+.logo{font:900 clamp(42px,13vw,58px)/.95 var(--display);font-stretch:125%}
+.logo span{color:var(--pol)}
+.sub{color:var(--suau);max-width:32ch}
+form{display:flex;flex-direction:column;gap:12px;width:min(340px,100%)}
+.entrada{width:100%;border:0;border-radius:14px;padding:14px;background:#fff;color:var(--fosc);text-align:center;font:900 40px var(--display);letter-spacing:.18em}
+.btn{border:0;border-radius:14px;padding:15px;font:900 20px var(--display);background:var(--pol);color:var(--fosc);box-shadow:0 5px 0 #0008}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #0008}
+.btn:disabled{opacity:.5}
+.error{background:#b3362f;border-radius:12px;padding:10px 14px;font-weight:700}
+.qui{background:var(--placa2);border-radius:12px;padding:8px 14px;font-weight:700;font-size:14px}
+.icona{font-size:64px;line-height:1}
+.votar{flex:1;display:flex;flex-direction:column;gap:12px;padding-bottom:18px}
+.context{background:#1f2c34;border-radius:4px 16px 16px 16px;padding:14px 16px;font-weight:700;font-size:18px}
+.pregunta{font:900 24px/1.15 var(--display)}
+.ops{display:flex;flex-direction:column;gap:10px}
+.op{border:2px solid var(--linia);background:var(--placa);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px;text-align:left;font:700 18px/1.25 var(--text);min-height:58px}
+.op .ll{flex:none;width:36px;height:36px;border-radius:9px;display:grid;place-items:center;background:var(--placa2);font:700 16px var(--mono)}
+.op.meva{border-color:var(--pol);background:#f5d90a1f}
+.op.meva .ll{background:var(--pol);color:var(--fosc)}
+.estat{text-align:center;font-weight:700;color:var(--suau);min-height:1.5em}
+.estat.ok{color:var(--ok)}
+.xarxa{position:fixed;left:50%;transform:translateX(-50%);top:calc(8px + env(safe-area-inset-top,0px));background:var(--placa2);border-radius:99px;padding:4px 12px;font-size:13px;font-weight:700}
+</style>
+</head>
+<body>
+<div class="xarxa" id="xarxa" hidden>Reconnectant…</div>
+<div class="barra" id="barra" hidden><span id="b-seccio"></span><span>🔒 Anònim</span></div>
+
+<main class="pantalla" id="p-entrar">
+  <div class="logo">Qui dona<br><span>la cara?</span></div>
+  <form id="f-entrar" autocomplete="off">
+    <input class="entrada" id="codi" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="0000" aria-label="Codi de la sala" required>
+    <div class="qui">Entres de manera anònima: ningú no sabrà què votes</div>
+    <button class="btn" id="b-entrar">Entrar</button>
+    <div class="error" id="e-entrar" hidden></div>
+  </form>
+</main>
+
+<main class="pantalla" id="p-info" hidden>
+  <div id="i-visual"></div>
+  <h1 style="font-size:clamp(28px,8.5vw,38px)" id="i-titol"></h1>
+  <p class="sub" id="i-sub"></p>
+</main>
+
+<main class="votar" id="p-votar" hidden>
+  <p class="context" id="v-context" hidden></p>
+  <h2 class="pregunta" id="v-pregunta"></h2>
+  <div class="ops" id="v-ops"></div>
+  <p class="estat" id="v-estat" aria-live="polite"></p>
+</main>
+
+<script type="module">
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const LL = 'ABCDEF';
+const N = await import('./sala.js');
+const uid = N.elMeuId();
+let codi = null, canal = null, estat = null, espera = null;
+const meus = {}, confirmats = {};
+
+const ver = id => { ['#p-entrar', '#p-info', '#p-votar'].forEach(p => $(p).hidden = p !== id); $('#barra').hidden = id === '#p-entrar'; };
+const info = (visual, titol, sub = '') => { $('#i-visual').innerHTML = visual; $('#i-titol').textContent = titol; $('#i-sub').textContent = sub; ver('#p-info'); };
+const error = m => { const e = $('#e-entrar'); e.textContent = m; e.hidden = false; };
+
+$('#codi').value = new URLSearchParams(location.search).get('c') || '';
+$('#f-entrar').onsubmit = e => {
+  e.preventDefault();
+  const c = $('#codi').value.trim();
+  if (!/^\d{4}$/.test(c)) return error('El codi té 4 números');
+  $('#e-entrar').hidden = true; $('#b-entrar').disabled = true;
+  codi = c; canal?.surt();
+  canal = N.connecta({ codi: c, uid, prefix: 'tut-cara-', onMissatge: alMissatge,
+    onEstat: st => { $('#xarxa').hidden = st === 'ok'; if (st === 'ok') canal.envia('hola'); } });
+  clearTimeout(espera);
+  espera = setTimeout(() => { if (!estat) { canal?.surt(); canal = null; error('No hi ha cap sala oberta amb aquest codi'); $('#b-entrar').disabled = false; } }, 6000);
+};
+if ($('#codi').value) setTimeout(() => $('#f-entrar').requestSubmit());
+
+function alMissatge(m) {
+  if (m.type === 'ack' && m.uid === uid) { confirmats[m.r] = meus[m.r]; return pintaEstat(); }
+  if (m.type !== 'estat') return;
+  if (!estat) { clearTimeout(espera); history.replaceState(null, '', `?c=${codi}`); }
+  pinta(m.s);
+}
+function pinta(s) {
+  const prev = estat; estat = s;
+  $('#b-seccio').textContent = s.seccio || 'Qui dona la cara?';
+  if (s.fase === 'cerrada') { canal?.surt(); canal = null; return info('<div class="icona">👋</div>', 'Sessió acabada', 'Gràcies per participar.'); }
+  if (s.fase === 'espera') return info('<div class="icona">👀</div>', 'Ja ets a dins!', 'Mira la pantalla gran. Quan toqui votar, les opcions sortiran aquí.');
+  if (s.fase === 'fi') return info('<div class="icona">✊</div>', s.titol || 'Fins aquí');
+  if (s.fase === 'vot') {
+    if (prev?.fase === 'vot' && prev.r === s.r && !$('#p-votar').hidden) return;
+    $('#v-context').hidden = !s.context; $('#v-context').textContent = s.context || '';
+    $('#v-pregunta').textContent = s.pregunta;
+    $('#v-ops').innerHTML = s.opcions.map((o, k) => `<button class="op" type="button" data-k="${k}"><span class="ll">${LL[k]}</span><span>${esc(o)}</span></button>`).join('');
+    ver('#p-votar'); return pintaEstat();
+  }
+  if (s.fase === 'tancat') { const k = meus[s.r]; return info('<div class="icona">📊</div>', 'Mira la pantalla', k != null ? `Has triat: ${LL[k]} · ${s.opcions[k]}` : 'Aquesta vegada no has votat.'); }
+  return info('<div class="icona">📺</div>', s.titol || 'Mira la pantalla');
+}
+function pintaEstat() {
+  if (!estat || estat.fase !== 'vot') return;
+  const k = meus[estat.r], ok = k != null && confirmats[estat.r] === k;
+  document.querySelectorAll('.op').forEach(b => b.classList.toggle('meva', +b.dataset.k === k));
+  const e = $('#v-estat'); e.className = 'estat' + (ok ? ' ok' : '');
+  e.textContent = k == null ? 'Toca una opció' : ok ? '✓ Rebut · pots canviar-ho fins que es reveli' : 'Enviant…';
+}
+$('#v-ops').addEventListener('click', async e => {
+  const b = e.target.closest('.op'); if (!b || !estat || estat.fase !== 'vot') return;
+  const k = +b.dataset.k, r = estat.r; meus[r] = k; navigator.vibrate?.(25); pintaEstat();
+  try { await canal.envia('vot', { k, r }); } catch { $('#v-estat').textContent = 'No ha arribat. Torna-ho a provar.'; }
+});
+document.addEventListener('visibilitychange', () => { if (!document.hidden && canal) canal.envia('hola'); });
+</script>
+</body>
+</html>
