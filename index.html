@@ -259,7 +259,7 @@ const opsHTML = (o, cls = '') => `<div class="ops ${cls}">${o.map((x, k) => `<di
 const votOResultat = (i, extra = {}) => sala.revelats.has(i) ? barres(i, extra) : opsHTML(opcionsDe(P[i]), extra.cls || '');
 
 const cartellDreta = (p, i) => `<p class="pregunta" style="font-size:clamp(24px,2.4vw,34px)">${esc(p.pregunta)}</p>
-  ${votOResultat(i)}
+  ${votOResultat(i, { bona: p.correcta ?? null })}
   ${sala.revelats.has(i) ? `<p class="revela">${esc(p.resposta)}</p><span class="seccio">Com reconèixer un cartell fet amb IA</span><ul class="senyals">${p.senyals.map(s => `<li>${esc(s)}</li>`).join('')}</ul><p class="font">Font: ${esc(p.font)}</p>` : ''}`;
 
 const RENDER = {
@@ -271,7 +271,7 @@ const RENDER = {
       </div>
       <div class="sala"><span class="font">Entra des del mòbil a</span><b class="url">${esc(MOVIL_URL.replace(/^https?:\/\//, ''))}</b><span class="font">amb el codi</span><span class="codi">${sala.codi}</span><div class="qr" id="qr"></div></div>
     </div>`,
-  pregunta: (p, i) => `<span class="seccio">${esc(p.titol)}</span><h2 class="pregunta">${esc(p.pregunta)}</h2>${votOResultat(i)}`,
+  pregunta: (p, i) => `<span class="seccio">${esc(p.titol)}</span><h2 class="pregunta">${esc(p.pregunta)}</h2>${votOResultat(i, { bona: p.correcta ?? null })}${sala.revelats.has(i) && p.resposta ? `<p class="revela ok">${esc(p.resposta)}</p>` : ''}`,
   reels: (p, i) => {
     const fixos = p.reels || [], llista = [...fixos, ...propis(i)];
     return `<h2 class="titol-mig">${esc(p.titol)}</h2>${p.text ? `<p class="lede">${esc(p.text)}</p>` : ''}
@@ -289,7 +289,7 @@ const RENDER = {
       <div class="costat pol"><span class="qui">El Pol</span><h3>${esc(p.pol.titol)}</h3><p>${esc(p.pol.text)}</p></div>
       <div class="costat org"><span class="qui">Mentrestant, qui ho organitza</span><h3>${esc(p.org.titol)}</h3><p>${esc(p.org.text)}</p></div>
     </div>
-    ${p.vot ? `<div class="vot-escena"><p class="pregunta">${esc(p.vot.pregunta)}</p>${votOResultat(i, { real: p.vot.real })}${sala.revelats.has(i) ? `<p class="revela">${esc(p.vot.realText)}</p>` : ''}</div>` : ''}`,
+    ${p.vot ? `<div class="vot-escena"><p class="pregunta">${esc(p.vot.pregunta)}</p>${votOResultat(i, { real: p.vot.real })}${sala.revelats.has(i) ? `<p class="revela">${esc(p.vot.realText)}</p>${p.vot.frases ? `<div class="consells">${p.vot.frases.map(f => `<div class="entra">${esc(f)}</div>`).join('')}</div>` : ''}` : ''}</div>` : ''}`,
   comparativa: p => `<h1 class="titol-gran">${esc(p.titol)}</h1>
     <table class="taula"><thead><tr><th></th><th class="p">El Pol</th><th class="o">Qui ho organitza</th></tr></thead>
     <tbody>${p.files.map(f => `<tr class="entra"><td>${esc(f[0])}</td><td>${esc(f[1])}</td><td>${esc(f[2])}</td></tr>`).join('')}</tbody></table>`,

@@ -21,15 +21,17 @@ Tria un número que no facin servir altres profes alhora.
 
 ## Estructura (30-35 minuts)
 
+La idea de fons no és «et poden detenir», sinó **«t'estan fent servir»**: qui ho organitza es queda a casa i la feina (presència, pressió, vídeos, publicitat) la fan els altres.
+
 | Bloc | Pantalles | Temps |
 |---|---|---|
 | **Abans de res** | 2 preguntes anònimes | 3 min |
-| **Què va passar** | Reel «Què és Blocus» i les dades (més de 130 detinguts, 89 menors, només 2 dels primers 128 amb antecedents) | 4 min |
-| **La història del Pol** | 5 escenes amb pantalla partida (el Pol / qui ho organitza) i 3 votacions; acaba amb «Qui ha donat la cara?» | 10 min |
-| **Els cartells** | Els cartells reals (carrusel de Newtral): qui els ha fet? i com reconèixer un cartell fet amb IA | 3 min |
-| **Qui hi guanya?** | Reel «Qui hi ha darrere?», quatre hipòtesis amb «se sap / no se sap» i els culpables fàcils | 6 min |
-| **Desmunta el missatge** | 4 missatges inventats: pressa, «som molts», premi, anonimat | 4 min |
-| **Per acabar** | «Què li diries al Pol?», la frase final i què fer si et passa | 3 min |
+| **Què va passar** | Reel «Què és Blocus», endevinar quants detinguts eren menors i les dades | 5 min |
+| **La història del Pol** | 5 escenes amb pantalla partida i 3 votacions «què faries tu?», inclosa la del grup d'amics («Vens o què?») amb frases per dir que no; acaba amb «Qui ha donat la cara?» | 11 min |
+| **Els cartells** | Els cartells reals (Newtral): endevinar quants seguidors tenia qui els va difondre (uns cent) i com reconèixer un cartell fet amb IA | 3 min |
+| **Qui hi guanya?** | Quatre hipòtesis amb el mateix pes («se sap / no se sap») i els culpables fàcils | 5 min |
+| **Desmunta el missatge** | 3 missatges inventats: pressa, enemic comú, «passa-ho» | 3 min |
+| **Per acabar** | «Què li diries al Pol?», la frase final i quatre idees útils | 3 min |
 
 ## Reels
 
@@ -37,9 +39,8 @@ Tria un número que no facin servir altres profes alhora.
 |---|---|
 | Què va passar | Què és Blocus i què passa amb les protestes |
 | Els cartells | Noves convocatòries del 31 d'octubre (carrusel amb els cartells reals) |
-| Qui hi ha darrere? | Qui hi ha darrere de Blocus Barcelona? |
 
-A les pantalles de reels pots **afegir-ne** un altre enganxant l'enllaç (Instagram, TikTok o YouTube). Es guarda en aquell navegador. Per fixar-los per a tothom, posa'ls a `contingut.json`.
+A les pantalles de reels pots **afegir-ne** un altre enganxant l'enllaç (Instagram, TikTok o YouTube). Es guarda en aquell navegador.
 
 ## Criteris de contingut
 
@@ -48,3 +49,15 @@ A les pantalles de reels pots **afegir-ne** un altre enganxant l'enllaç (Instag
 - **No ridiculitzar** els nois i noies que hi van anar: el focus és qui els va utilitzar.
 
 Totes les dades i el contingut són a `contingut.json`. La sala és anònima i no desa res (Supabase Realtime, només missatges en directe).
+
+## Notes per al profe: preguntes que sortiran
+
+Respostes prudents. No són assessorament legal: davant de dubtes concrets, millor derivar-los.
+
+- **«Et detenen només per ser-hi o per gravar?»** Ser-hi o gravar no és delicte per si sol. Però la policia pot detenir qui troba enmig d'uns disturbis, i després es mira què ha fet cadascú. Els vídeos del mòbil poden servir de prova, també contra els teus amics.
+- **«Els antecedents de menors es borren?»** No consten als antecedents penals d'adults. Queden en un registre específic de menors i es cancel·len amb el temps. El que pesa més és l'expedient i el que hagin de pagar els pares.
+- **«I els botiguers i els treballadors?»** És una bona pregunta per obrir. Són els que paguen el vidre trencat i el gènere robat, i sovint són comerços petits.
+- **«Per què hi ha tanta ràbia?»** Es pot parlar de per què el missatge connecta (França, avorriment, desigualtat, voler sentir-se part d'alguna cosa) sense justificar els saquejos. Entendre-ho no és el mateix que justificar-ho.
+- **«Per què TikTok i Telegram no ho paren?»** Tanquen comptes i canals, però se n'obren de nous en minuts (ho mostra la història). Pot obrir un debat sobre la responsabilitat de les plataformes.
+- **Sobre les hipòtesis polítiques:** les quatre tenen el mateix pes. Si algú s'hi posa a la defensiva, torna a la idea central: no sabem qui hi ha darrere, i justament per això no s'ha de culpar ningú sense proves.
+

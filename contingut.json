@@ -8,7 +8,7 @@
     {
       "tipus": "pregunta",
       "seccio": "Abans de res",
-      "titol": "Sense respostes bones ni dolentes",
+      "titol": "Vot anònim",
       "pregunta": "Has vist vídeos o missatges de Blocus?",
       "opcions": [
         "Sí, molts",
@@ -19,7 +19,7 @@
     {
       "tipus": "pregunta",
       "seccio": "Abans de res",
-      "titol": "Sense respostes bones ni dolentes",
+      "titol": "Vot anònim",
       "pregunta": "Per què creus que hi va anar la gent?",
       "opcions": [
         "Per diversió",
@@ -40,6 +40,20 @@
       ]
     },
     {
+      "tipus": "pregunta",
+      "seccio": "Què va passar",
+      "titol": "Endevina",
+      "pregunta": "A Barcelona hi va haver més de 130 detinguts. Quants creus que eren menors d'edat?",
+      "opcions": [
+        "Menys de 10",
+        "Uns 30",
+        "Uns 60",
+        "Gairebé 90"
+      ],
+      "correcta": 3,
+      "resposta": "89. Gairebé set de cada deu."
+    },
+    {
       "tipus": "dades",
       "seccio": "Què va passar",
       "titol": "Les dades",
@@ -53,18 +67,18 @@
           "text": "eren menors d'edat"
         },
         {
-          "n": "2",
-          "text": "dels primers 128 detinguts tenien antecedents"
+          "n": "2 de 128",
+          "text": "dels primers detinguts tenien antecedents"
         }
       ],
-      "frase": "La majoria no eren «delinqüents»: eren nois i noies com els d'aquesta classe.",
+      "frase": "La gran majoria no s'havia ficat mai en cap embolic.",
       "font": "Fiscalia, recollit per Xataka (30 d'octubre de 2026)"
     },
     {
       "tipus": "intro-historia",
       "seccio": "La història del Pol",
       "titol": "La història del Pol",
-      "text": "El Pol té 15 anys i fa 3r d'ESO. No existeix, però el que li passa ha passat de veritat. A l'esquerra, el que viu el Pol. A la dreta, el que fa en aquell moment qui ho organitza."
+      "text": "El Pol té 15 anys. És inventat; el que li passa, no. A l'esquerra, el Pol. A la dreta, qui ho organitza: fixeu-vos en què fa mentrestant."
     },
     {
       "tipus": "escena",
@@ -105,24 +119,31 @@
     {
       "tipus": "escena",
       "seccio": "La història del Pol",
-      "hora": "Divendres · 13:30",
+      "hora": "Divendres · 12:10",
       "pol": {
-        "titol": "La convocatòria",
-        "text": "«Divendres a les 18 h. Roba negra i màscara. Detalls al xat privat.» I a sota: «No voleu tornar a casa amb iPhones?». Els amics del Pol diuen que hi aniran."
+        "titol": "«Vens o què?»",
+        "text": "Al canal: «Divendres a les 18 h. Roba negra i màscara. No voleu tornar a casa amb iPhones?». I al grup d'amics del Pol: «Vens divendres o què?», «No siguis rajat 😂»."
       },
       "org": {
-        "titol": "Des del sofà",
-        "text": "Escriu la convocatòria. Ell no hi anirà: no li cal."
+        "titol": "Ja ho fan ells",
+        "text": "No coneix el Pol ni els seus amics. No li cal: la pressió del grup la fan ells, gratis."
       },
       "vot": {
-        "pregunta": "Què fa el Pol?",
+        "pregunta": "Què contestaries tu al grup?",
         "opcions": [
-          "Hi va",
-          "Hi va, però només a mirar",
-          "No hi va"
+          "«Vinga, hi vaig»",
+          "«Només a mirar»",
+          "«Passo, quedem després»",
+          "No contesto"
         ],
         "real": 1,
-        "realText": "El Pol hi va. «Només a mirar», es diu."
+        "realText": "El Pol contesta «només a mirar». Però hi havia maneres de dir que no sense quedar malament:",
+        "frases": [
+          "«Aquest divendres no puc. Quedem dissabte?»",
+          "«Ni sabeu qui ho organitza. Jo passo.»",
+          "«Si em pillen, a casa em maten. Passo.»",
+          "Silenciar el grup un parell de dies: ningú no se n'adona"
+        ]
       }
     },
     {
@@ -134,18 +155,18 @@
         "text": "Fum, crits, un aparador trencat. Algú surt d'una botiga amb una caixa. El Pol porta la màscara i grava amb el mòbil. Arriben els antiavalots."
       },
       "org": {
-        "titol": "Des de casa",
-        "text": "Mira els vídeos que penja la gent, esborra els missatges i obre un canal nou: «Això només és el començament»."
+        "titol": "Publicitat gratis",
+        "text": "Des de casa, mira els vídeos que penja la gent: són la seva publicitat, i no li costen res. Després esborra els missatges i obre un canal nou."
       },
       "vot": {
-        "pregunta": "Què fa el Pol?",
+        "pregunta": "Què faries tu?",
         "opcions": [
-          "Marxa corrent",
-          "Es queda gravant",
-          "Ajuda un amic que s'ha fet mal"
+          "Marxar",
+          "Quedar-me gravant",
+          "Ajudar un amic que s'ha fet mal"
         ],
         "real": 1,
-        "realText": "El Pol es queda gravant uns minuts més. I el detenen: la màscara no ha servit de res, el mòbil és ple de vídeos i hi ha càmeres a tot el carrer."
+        "realText": "El Pol es queda gravant uns minuts més, i el detenen. La màscara no ha servit de res: als vídeos se'l veu a ell i als seus amics."
       }
     },
     {
@@ -154,7 +175,7 @@
       "hora": "Les setmanes següents",
       "pol": {
         "titol": "Les conseqüències",
-        "text": "Com que és menor, el seu cas va a la Fiscalia de Menors. Pot haver de complir una mesura, com tasques socioeducatives o llibertat vigilada. I els seus pares poden haver de pagar els danys."
+        "text": "Com que és menor, el seu cas va a la Fiscalia de Menors. Pot haver de fer tasques per a la comunitat o estar en llibertat vigilada. I els seus pares poden haver de pagar els danys."
       },
       "org": {
         "titol": "Anònim",
@@ -172,19 +193,19 @@
           "A casa"
         ],
         [
-          "Qui hi va posar la cara?",
-          "Ell",
-          "Ningú"
+          "Qui li feia la publicitat?",
+          "El Pol, gravant i reenviant",
+          "Ningú: ja la feien els altres"
+        ],
+        [
+          "Qui hi posava la cara?",
+          "El Pol",
+          "Gairebé ningú no sap qui són"
         ],
         [
           "Què s'hi ha jugat?",
-          "El seu expedient i els diners dels pares",
-          "Res, o molt poc"
-        ],
-        [
-          "Què ha guanyat?",
-          "Res",
-          "Atenció, caos… o el que buscés"
+          "Un expedient i els diners dels pares",
+          "Molt menys"
         ]
       ]
     },
@@ -192,62 +213,54 @@
       "tipus": "cartell",
       "seccio": "Els cartells",
       "titol": "Els cartells",
-      "pregunta": "Aquests cartells van circular de veritat. Qui creus que els va fer?",
+      "reel": "https://www.instagram.com/newtral/p/De9SxHPjOJM/",
+      "pregunta": "Aquests cartells semblaven d'un gran moviment. Quants seguidors creus que tenia el perfil que va difondre el del dia 24?",
       "opcions": [
-        "Un grup gran i organitzat",
-        "Unes quantes persones",
-        "Una sola persona",
-        "No es pot saber"
+        "Menys de 500",
+        "Uns 5.000",
+        "Uns 50.000",
+        "Més de 500.000"
       ],
-      "resposta": "No es pot saber. I aquesta és la trampa: amb una IA, una sola persona pot fer en 30 segons un cartell que sembla d'un gran moviment. La policia va trobar un perfil d'uns cent seguidors que difonia el cartell del dia 24.",
+      "correcta": 0,
+      "resposta": "Uns cent. Amb una IA, una sola persona pot fer en 30 segons un cartell que sembla d'un gran moviment.",
       "senyals": [
-        "Lletres deformades o paraules mal escrites",
-        "Mans, cares o objectes estranys",
-        "Estètica «perfecta» i genèrica, sense res concret",
+        "Estètica «perfecta» i genèrica, com de pel·lícula",
+        "Detalls estranys: mans, cares, ombres o fons que no encaixen",
         "Cap autor, cap entitat, cap contacte",
-        "Un QR que porta a un xat anònim"
+        "Un QR que porta a un xat anònim",
+        "Lletres massa netes o amb algun error estrany (les IA ja escriuen bé, però no sempre)"
       ],
-      "font": "Xataka, 30 d'octubre de 2026",
-      "reel": "https://www.instagram.com/newtral/p/De9SxHPjOJM/"
-    },
-    {
-      "tipus": "reels",
-      "seccio": "Qui hi guanya?",
-      "titol": "Qui hi ha darrere?",
-      "text": "Abans de les hipòtesis, què en sabem. Un vídeo de Newtral.",
-      "reels": [
-        "https://www.instagram.com/newtral/reel/DfHidNhMdQO/"
-      ]
+      "font": "Xataka, 30 d'octubre de 2026"
     },
     {
       "tipus": "hipotesis",
       "seccio": "Qui hi guanya?",
-      "titol": "Quatre hipòtesis",
-      "intro": "Ningú no ho sap del cert. Aquestes són les hipòtesis que s'han publicat. Mireu què se sap i què no.",
+      "titol": "Qui hi ha darrere?",
+      "intro": "Ningú no ho sap del cert. Aquestes són les hipòtesis que s'han publicat.",
       "cartes": [
         {
           "nom": "Efecte mirall",
-          "text": "Una còpia del que passava a França, que l'algoritme va fer créixer. La por de perdre-s'ho (FOMO) va fer la resta.",
-          "sap": "Els Mossos assenyalen el FOMO i l'«efecte mirall» de França com a motor.",
+          "text": "Una còpia de França que va créixer sola a les xarxes.",
+          "sap": "Els Mossos ho apunten com a motor.",
           "nosap": "Si algú ho va empènyer a propòsit."
         },
         {
           "nom": "Oportunisme",
           "text": "Gent que volia saquejar i va aprofitar la convocatòria.",
-          "sap": "Els missatges acabaven prometent coses de marca i mòbils.",
+          "sap": "Els missatges prometien mòbils i roba de marca.",
           "nosap": "Si era l'objectiu des del principi."
         },
         {
           "nom": "Ultradreta",
-          "text": "Sembrar el caos perquè tota protesta sembli violència, i que la gent busqui culpables.",
-          "sap": "És la primera hipòtesi que s'ha apuntat. El Govern espanyol assenyala el seu entorn, sense atribuir-ho a cap partit.",
-          "nosap": "No consta cap vincle públic demostrat."
+          "text": "Sembrar el caos perquè tota protesta sembli violència.",
+          "sap": "És una de les hipòtesis que s'han apuntat.",
+          "nosap": "No consta cap vincle demostrat."
         },
         {
-          "nom": "Injerència estrangera",
+          "nom": "Ingerència estrangera",
           "text": "Un altre país que vol desestabilitzar.",
           "sap": "Se n'ha parlat en alguns mitjans.",
-          "nosap": "La Policia Nacional diu que no veu injerència de cap país."
+          "nosap": "La policia diu que no en veu cap indici."
         }
       ],
       "pregunta": "Quina et sembla més probable?",
@@ -255,11 +268,10 @@
         "Efecte mirall",
         "Oportunisme",
         "Ultradreta",
-        "Injerència estrangera",
+        "Ingerència estrangera",
         "No ho sé"
       ],
-      "tancament": "Fixeu-vos que partits de colors diferents s'han acusat els uns als altres. Quan no se sap qui hi ha darrere, guanya qui aconsegueix que culpem algú sense proves.",
-      "font": "Xataka, Metrópoli Abierta i Infobae, octubre de 2026",
+      "tancament": "Partits de colors diferents s'han acusat els uns als altres. Quan no se sap qui hi ha darrere, guanya qui aconsegueix que culpem algú sense proves.",
       "culpables": {
         "text": "Després d'uns disturbis sovint circulen missatges que culpen tot un col·lectiu: els immigrants, «els de tal barri», «els joves». Moltes vegades, sense cap prova.",
         "preguntes": [
@@ -267,35 +279,29 @@
           "Amb quina prova?",
           "A qui li convé que ho cregui?"
         ]
-      }
+      },
+      "font": "Xataka, Metrópoli Abierta i Infobae, octubre de 2026"
     },
     {
       "tipus": "missatge",
       "seccio": "Desmunta el missatge",
       "text": "Divendres o mai. Si no ho fem ara, no ho farem.",
       "correcta": 0,
-      "explicacio": "Pressa: si no hi ha temps per pensar, no penses."
+      "explicacio": "Pressa: sense temps per pensar, fas el que diu el grup."
     },
     {
       "tipus": "missatge",
       "seccio": "Desmunta el missatge",
-      "text": "Ja som més de 2.000. No estàs sol.",
-      "correcta": 2,
-      "explicacio": "Sentir-se part d'una cosa gran. Però 2.000 membres d'un canal no són 2.000 persones al carrer."
+      "text": "Ells viuen de luxe amb els nostres impostos. Ja n'hi ha prou.",
+      "correcta": 1,
+      "explicacio": "Un «ells» que no és ningú en concret: cadascú hi posa la seva ràbia."
     },
     {
       "tipus": "missatge",
       "seccio": "Desmunta el missatge",
-      "text": "Tornareu a casa amb el que vulgueu 😏",
-      "correcta": 3,
-      "explicacio": "Una promesa de premi. Qui la fa no correrà cap risc per complir-la."
-    },
-    {
-      "tipus": "missatge",
-      "seccio": "Desmunta el missatge",
-      "text": "Roba negra i màscara. Ningú no sabrà qui ets.",
-      "correcta": 4,
-      "explicacio": "Falsa sensació d'anonimat. Recordeu el Pol: el mòbil i les càmeres sí que sabien qui era."
+      "text": "Si no ho comparteixes, és que estàs amb ells. Envia-ho a 5 grups.",
+      "correcta": 5,
+      "explicacio": "Et fan sentir culpable si no ho passes. I qui ho reenvia fa la feina de qui ho organitza."
     },
     {
       "tipus": "pregunta",
@@ -304,8 +310,8 @@
       "pregunta": "Què li diries al Pol el primer dia, quan va veure el vídeo?",
       "opcions": [
         "Que no escanegi el QR",
-        "Que pregunti qui hi ha darrere",
-        "Que en parli amb algú",
+        "Que miri qui hi ha darrere abans de fer res",
+        "Que no gravi res",
         "Que hi vagi, però amb compte",
         "Res, és cosa seva"
       ]
@@ -313,14 +319,14 @@
     {
       "tipus": "final",
       "seccio": "Per acabar",
-      "titol": "Qui et demana que donis la cara no hi posa mai la seva.",
+      "titol": "Qui et demana que donis la cara no hi posa la seva.",
+      "trucs": "Pressa, un enemic comú, premis, «passa-ho» i falsa sensació d'anonimat: són els mateixos trucs que fan servir les estafes per missatge.",
       "consells": [
-        "No reenviïs el que no saps d'on ve",
-        "Pots sortir d'un grup sense donar explicacions",
-        "Parla-ho amb algú de confiança",
-        "Denuncia el compte a la plataforma"
-      ],
-      "trucs": "Pressa, «som molts», premis i falsa sensació d'anonimat: són els mateixos trucs que fan servir les estafes per missatge."
+        "Si no saps qui hi ha darrere, no ho reenviïs",
+        "No gravis: el teu vídeo és publicitat gratis per a qui ho organitza",
+        "Silencia el grup o surt-ne: no cal donar explicacions",
+        "«Aquest cop passo» també és una resposta"
+      ]
     },
     {
       "tipus": "fonts",
