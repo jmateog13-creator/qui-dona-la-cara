@@ -198,12 +198,12 @@
       "hora": "Les setmanes següents",
       "pol": {
         "titol": "Les conseqüències",
-        "text": "Com que és menor, el seu cas va a la Fiscalia de Menors. Pot haver de fer tasques per a la comunitat o estar en llibertat vigilada. I els seus pares poden haver de pagar els danys.",
+        "text": "Com que és menor, el seu cas va a la Fiscalia de Menors. Com la majoria dels menors detinguts el dia 24, queda en llibertat vigilada; alguns han acabat internats en un centre. I els seus pares poden haver de pagar els danys.",
         "img": "img/5-pol-consequencies.jpg"
       },
       "org": {
-        "titol": "Anònim",
-        "text": "Molts organitzadors no han estat identificats. Un dels principals instigadors, un jove de 20 anys, sí que ha estat detingut."
+        "titol": "També els busquen",
+        "text": "La policia va a buscar qui ho organitza. Ja hi ha joves detinguts per crear i administrar els canals: dues noies de 14 i 17 anys a Barcelona, un noi de 17 anys a València (internat en un centre de menors) i el presumpte fundador de Blocus a Picanya, que ha passat a disposició judicial."
       },
       "debat": [
         "Qui acaba pagant, al final? Pensa en els pares i en els botiguers."
@@ -225,17 +225,18 @@
           "Ningú: ja la feien els altres"
         ],
         [
-          "Qui hi posava la cara?",
+          "Qui hi posava la cara aquell dia?",
           "El Pol",
-          "Gairebé ningú no sap qui són"
+          "Ningú"
         ],
         [
-          "Què s'hi ha jugat?",
-          "Un expedient i els diners dels pares",
-          "Molt menys"
+          "I després?",
+          "Expedient, llibertat vigilada i els pares pagant",
+          "Molts ja estan detinguts, i alguns són menors"
         ]
       ],
       "debat": [
+        "Organitzar des de casa et lliura de les conseqüències?",
         "Qui ha treballat per a qui?"
       ]
     },
@@ -319,6 +320,23 @@
       ]
     },
     {
+      "tipus": "pregunta",
+      "seccio": "Qui hi perd?",
+      "titol": "Qui hi perd?",
+      "pregunta": "Qui creus que hi perd més amb uns disturbis així?",
+      "opcions": [
+        "Els botiguers i els veïns",
+        "Els joves detinguts i les seves famílies",
+        "La gent que protesta de manera pacífica",
+        "Ningú"
+      ],
+      "resposta": "Hi perden tots, menys qui ho organitza. I n'hi ha un que s'oblida: quan una protesta acaba en saquejos, la gent associa protesta amb violència. Blocus va agafar el nom dels bloquejos d'instituts dels estudiants francesos; aquí, ara, aquest nom només fa pensar en aparadors trencats. Qualsevol protesta pacífica, per l'educació, l'habitatge o el que sigui, perd suport.",
+      "debat": [
+        "Coneixeu alguna protesta que hàgiu vist per la tele i que fos pacífica? Com la recordeu?",
+        "Si volguéssiu canviar alguna cosa de veritat, com ho faríeu?"
+      ]
+    },
+    {
       "tipus": "missatge",
       "seccio": "Desmunta el missatge",
       "text": "Divendres o mai. Si no ho fem ara, no ho farem.",
@@ -333,23 +351,15 @@
       "explicacio": "Un «ells» que no és ningú en concret: cadascú hi posa la seva ràbia."
     },
     {
-      "tipus": "missatge",
-      "seccio": "Desmunta el missatge",
-      "text": "Si no ho comparteixes, és que estàs amb ells. Envia-ho a 5 grups.",
-      "correcta": 5,
-      "explicacio": "Et fan sentir culpable si no ho passes. I qui ho reenvia fa la feina de qui ho organitza."
-    },
-    {
       "tipus": "pregunta",
       "seccio": "Per acabar",
-      "titol": "El primer dia",
-      "pregunta": "Què li diries al Pol el primer dia, quan va veure el vídeo?",
+      "titol": "Què t'emportes?",
+      "pregunta": "De tot això, quina idea t'emportes?",
       "opcions": [
-        "Que no escanegi el QR",
-        "Que miri qui hi ha darrere abans de fer res",
-        "Que no gravi res",
-        "Que hi vagi, però amb compte",
-        "Res, és cosa seva"
+        "Qui organitza fa servir la teva cara, els teus vídeos i els teus amics",
+        "Reenviar, gravar o administrar un grup també té conseqüències",
+        "Els disturbis fan que qualsevol protesta sembli violència",
+        "Res de nou"
       ]
     },
     {
@@ -366,7 +376,12 @@
       "debat": [
         "Quina d'aquestes quatre idees us serviria de veritat?"
       ],
-      "img": "img/6-final-cami.jpg"
+      "img": "img/6-final-cami.jpg",
+      "idees": [
+        "Qui organitza fa servir la teva cara, els teus vídeos i els teus amics: la feina la fas tu.",
+        "Reenviar, gravar o administrar un grup també té conseqüències. Ja hi ha joves de 14 a 20 anys detinguts per organitzar-ho.",
+        "Els disturbis no ajuden cap causa: fan que qualsevol protesta sembli violència."
+      ]
     },
     {
       "tipus": "fonts",
@@ -382,6 +397,21 @@
           "Newtral",
           "Detingut el principal instigador de Blocus (30-10-2026)",
           "https://www.newtral.es/detenido-lider-blocus-fuck-aeat/20261030/"
+        ],
+        [
+          "El Español",
+          "L'impulsor de Blocus Espanya i un altre detingut passen a disposició judicial (31-10-2026)",
+          "https://www.elespanol.com/valencia/20261031/impulsor-blocus-espana-detenido-pasan-sabado-disposicion-judicial/1003744442287_0.html"
+        ],
+        [
+          "Infobae (EFE)",
+          "Detingudes dues menors de 14 i 17 anys per promoure els disturbis de Blocus a Barcelona; balanç del TSJC (02-11-2026)",
+          "https://www.infobae.com/espana/agencias/2026/11/02/detenidas-dos-menores-de-14-y-17-anos-por-promover-los-disturbios-de-blocus-en-barcelona/"
+        ],
+        [
+          "elDiario.es",
+          "Detingudes dues menors per «planificar i difondre» els saquejos (02-11-2026)",
+          "https://www.eldiario.es/catalunya/detenidas-menores-14-17-anos-barcelona-planificar-difundir-saqueos-blocus_1_13632377.html"
         ],
         [
           "Xataka",

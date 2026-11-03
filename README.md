@@ -21,17 +21,20 @@ Enllaços directes, per exemple per al Moodle (canvia `1234` pel mateix número 
 
 ## Estructura (30-35 minuts)
 
-La idea de fons no és «et poden detenir», sinó **«t'estan fent servir»**: qui ho organitza es queda a casa i la feina (presència, pressió, vídeos, publicitat) la fan els altres.
+L'objectiu és que en surtin amb **tres idees clares** (última pantalla):
+1. Qui organitza fa servir la teva cara, els teus vídeos i els teus amics: la feina la fas tu.
+2. Reenviar, gravar o administrar un grup també té conseqüències. Ja hi ha joves de 14 a 20 anys detinguts per organitzar-ho.
+3. Els disturbis no ajuden cap causa: fan que qualsevol protesta sembli violència.
 
 | Bloc | Pantalles | Temps |
 |---|---|---|
 | **Abans de res** | 2 preguntes anònimes | 3 min |
 | **Què va passar** | Reel «Què és Blocus», endevinar quants detinguts eren menors i les dades | 5 min |
-| **La història del Pol** | 5 escenes amb pantalla partida i 3 votacions «què faries tu?», inclosa la del grup d'amics («Vens o què?») amb frases per dir que no; acaba amb «Qui ha donat la cara?» | 11 min |
-| **Els cartells** | Els cartells reals (Newtral): endevinar quants seguidors tenia qui els va difondre (uns cent) i com reconèixer un cartell fet amb IA | 3 min |
-| **Qui hi guanya?** | Quatre hipòtesis amb el mateix pes («se sap / no se sap») i els culpables fàcils | 5 min |
-| **Desmunta el missatge** | 3 missatges inventats: pressa, enemic comú, «passa-ho» | 3 min |
-| **Per acabar** | «Què li diries al Pol?», la frase final i quatre idees útils | 3 min |
+| **La història del Pol** | 5 escenes amb pantalla partida i il·lustracions, 3 votacions «què faries tu?» (inclosa la del grup d'amics), i conseqüències reals també per als qui ho organitzen | 11 min |
+| **Els cartells** | Els cartells reals (Newtral): quants seguidors tenia qui els va difondre? (uns cent) i com reconèixer la IA | 3 min |
+| **Qui hi guanya? / Qui hi perd?** | Quatre hipòtesis amb el mateix pes i els culpables fàcils. Després, «Qui hi perd?»: tothom menys qui ho organitza, i sobretot qualsevol protesta pacífica, que passa a semblar violència | 6 min |
+| **Desmunta el missatge** | 2 missatges inventats: pressa i enemic comú | 2 min |
+| **Per acabar** | «Què t'emportes?» (vot anònim: et diu què els ha quedat) i les tres idees | 3 min |
 
 ## Reels
 

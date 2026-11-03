@@ -171,6 +171,9 @@ a{color:var(--pol)}
 .il{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block;background:var(--placa2)}
 .il.final{max-height:38vh;border-radius:18px}
 .costat .il{aspect-ratio:auto;height:clamp(140px,24vh,260px)}
+.idees{margin:0;padding:0;list-style:none;counter-reset:n;display:flex;flex-direction:column;gap:12px}
+.idees li{counter-increment:n;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;background:var(--placa);border-radius:14px;padding:16px 20px;font:800 clamp(20px,2.1vw,30px)/1.25 var(--display)}
+.idees li::before{content:counter(n);color:var(--pol);font:900 clamp(30px,3vw,44px)/1 var(--display)}
 .panell-debat{border:2px dashed var(--org);border-radius:16px;padding:16px 22px;background:#15171f;display:flex;flex-direction:column;gap:10px}
 .panell-debat .seccio{color:var(--org)}
 .panell-debat p{font:800 clamp(22px,2.3vw,32px)/1.25 var(--display);color:#dfe5fb}
@@ -332,7 +335,7 @@ const RENDER = {
     ${votOResultat(i, { bona: p.correcta, cls: 'trucs' })}
     ${sala.revelats.has(i) ? `<p class="revela ok">${esc(p.explicacio)}</p>` : ''}`,
   mateixos: p => `<h1 class="titol-gran">${esc(p.titol)}</h1><p class="lede" style="color:var(--tinta)">${esc(p.text)}</p>`,
-  final: p => `${p.img ? `<img class="il final" src="${esc(p.img)}" alt="">` : ''}<h1 class="titol-gran" style="max-width:20ch">${esc(p.titol)}</h1>${p.trucs ? `<p class="lede">${esc(p.trucs)}</p>` : ''}<span class="seccio">Si et passa a tu</span><div class="consells">${p.consells.map(c => `<div class="entra">${esc(c)}</div>`).join('')}</div>`,
+  final: p => `${p.img ? `<img class="il final" src="${esc(p.img)}" alt="">` : ''}<h1 class="titol-gran" style="max-width:20ch">${esc(p.titol)}</h1>${p.idees ? `<span class="seccio">Tres idees per emportar-te</span><ol class="idees">${p.idees.map(x => `<li class="entra">${esc(x)}</li>`).join('')}</ol>` : ''}${p.trucs ? `<p class="lede">${esc(p.trucs)}</p>` : ''}<span class="seccio">Si et passa a tu</span><div class="consells">${p.consells.map(c => `<div class="entra">${esc(c)}</div>`).join('')}</div>`,
   fonts: p => `<h2 class="titol-mig">${esc(p.titol)}</h2><div class="fonts">${p.fonts.map(f => `<a href="${esc(f[2])}" target="_blank" rel="noopener"><b>${esc(f[0])}</b>${esc(f[1])}</a>`).join('')}</div>`,
 };
 
