@@ -39,6 +39,11 @@ form{display:flex;flex-direction:column;gap:12px;width:min(340px,100%)}
 .op .ll{flex:none;width:36px;height:36px;border-radius:9px;display:grid;place-items:center;background:var(--placa2);font:700 16px var(--mono)}
 .op.meva{border-color:var(--pol);background:#f5d90a1f}
 .op.meva .ll{background:var(--pol);color:var(--fosc)}
+.zg{background:var(--placa);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.zg p{margin:0;font-weight:700;font-size:16px}
+.zg-b{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.zg-b button{border:2px solid var(--linia);background:var(--placa2);border-radius:12px;padding:10px 0;font-size:22px}
+.zg-b button.meva{border-color:var(--pol);background:#f5d90a26}
 .estat{text-align:center;font-weight:700;color:var(--suau);min-height:1.5em}
 .estat.ok{color:var(--ok)}
 .xarxa{position:fixed;left:50%;transform:translateX(-50%);top:calc(8px + env(safe-area-inset-top,0px));background:var(--placa2);border-radius:99px;padding:4px 12px;font-size:13px;font-weight:700}
@@ -99,7 +104,7 @@ $('#f-entrar').onsubmit = e => {
 if ($('#codi').value) setTimeout(() => $('#f-entrar').requestSubmit());
 
 function alMissatge(m) {
-  if (m.type === 'ack' && m.uid === uid) { confirmats[m.r] = meus[m.r]; return pintaEstat(); }
+  if (m.type === 'ack' && m.uid === uid) { confirmats[m.r] = Array.isArray(meus[m.r]) ? [...meus[m.r]] : meus[m.r]; return pintaEstat(); }
   if (m.type !== 'estat') return;
   if (!estat) { clearTimeout(espera); history.replaceState(null, '', `?c=${codi}`); }
   pinta(m.s);
@@ -110,6 +115,15 @@ function pinta(s) {
   if (s.fase === 'cerrada') { canal?.surt(); canal = null; return info('<div class="icona">👋</div>', 'Sessió acabada', 'Gràcies per participar.'); }
   if (s.fase === 'espera') return info('<div class="icona">👀</div>', 'Ja ets a dins!', 'Mira la pantalla gran. Quan toqui votar, les opcions sortiran aquí.');
   if (s.fase === 'fi') return info('<div class="icona">✊</div>', s.titol || 'Fins aquí');
+  if (s.fase === 'vot' && s.tipus === 'zonagris') {
+    if (prev?.fase === 'vot' && prev.r === s.r && !$('#p-votar').hidden) return;
+    if (!meus[s.r]) meus[s.r] = s.casos.map(() => -1);
+    $('#v-context').hidden = true;
+    $('#v-pregunta').textContent = s.pregunta;
+    $('#v-ops').innerHTML = s.casos.map((c, j) => `<div class="zg"><p>${j + 1}. ${esc(c)}</p><div class="zg-b">${['✅', '⚠️', '❌'].map((e, k) => `<button type="button" data-j="${j}" data-k="${k}" aria-label="${esc(s.opcions[k])}">${e}</button>`).join('')}</div></div>`).join('');
+    ver('#p-votar'); return pintaEstat();
+  }
+  if (s.fase === 'tancat' && s.tipus === 'zonagris') return info('<div class="icona">📊</div>', 'Mira la pantalla', 'Ara surten les respostes de tota la classe.');
   if (s.fase === 'vot') {
     if (prev?.fase === 'vot' && prev.r === s.r && !$('#p-votar').hidden) return;
     $('#v-context').hidden = !s.context; $('#v-context').textContent = s.context || '';
@@ -122,12 +136,25 @@ function pinta(s) {
 }
 function pintaEstat() {
   if (!estat || estat.fase !== 'vot') return;
+  if (estat.tipus === 'zonagris') {
+    const a = meus[estat.r] || [], fets = a.filter(x => x >= 0).length, ok = fets && JSON.stringify(confirmats[estat.r]) === JSON.stringify(a);
+    document.querySelectorAll('.zg-b button').forEach(b => b.classList.toggle('meva', a[+b.dataset.j] === +b.dataset.k));
+    const e = $('#v-estat'); e.className = 'estat' + (ok ? ' ok' : '');
+    e.textContent = fets < a.length ? `${fets} de ${a.length} casos` : ok ? '✓ Rebut · pots canviar-ho fins que es reveli' : 'Enviant…';
+    return;
+  }
   const k = meus[estat.r], ok = k != null && confirmats[estat.r] === k;
   document.querySelectorAll('.op').forEach(b => b.classList.toggle('meva', +b.dataset.k === k));
   const e = $('#v-estat'); e.className = 'estat' + (ok ? ' ok' : '');
   e.textContent = k == null ? 'Toca una opció' : ok ? '✓ Rebut · pots canviar-ho fins que es reveli' : 'Enviant…';
 }
 $('#v-ops').addEventListener('click', async e => {
+  const z = e.target.closest('.zg-b button');
+  if (z && estat?.fase === 'vot' && estat.tipus === 'zonagris') {
+    const r = estat.r, a = [...meus[r]]; a[+z.dataset.j] = +z.dataset.k; meus[r] = a; navigator.vibrate?.(20); pintaEstat();
+    try { await canal.envia('vot', { k: a, r }); } catch { $('#v-estat').textContent = 'No ha arribat. Torna-ho a provar.'; }
+    return;
+  }
   const b = e.target.closest('.op'); if (!b || !estat || estat.fase !== 'vot') return;
   const k = +b.dataset.k, r = estat.r; meus[r] = k; navigator.vibrate?.(25); pintaEstat();
   try { await canal.envia('vot', { k, r }); } catch { $('#v-estat').textContent = 'No ha arribat. Torna-ho a provar.'; }

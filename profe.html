@@ -184,6 +184,15 @@ a{color:var(--pol)}
 .contrast ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
 .contrast li{font:800 clamp(22px,2.4vw,34px)/1.15 var(--display)}
 .contrast .no li{color:#ffb4ae}
+.zg{display:flex;flex-direction:column;gap:10px}
+.zg-fila{display:grid;grid-template-columns:auto minmax(0,1.3fr) auto minmax(0,1.2fr);gap:14px;align-items:center;background:var(--placa);border-radius:14px;padding:12px 16px}
+@media (max-width:900px){.zg-fila{grid-template-columns:auto 1fr}.zg-vots,.zg-nota{grid-column:2}}
+.zg-num{font:700 18px var(--mono);color:var(--suau)}
+.zg-text{font:800 clamp(19px,1.9vw,26px)/1.2 var(--display)}
+.zg-vots{display:flex;gap:8px;font:700 15px var(--mono);color:var(--suau);white-space:nowrap}
+.zg-vots .bona{color:var(--tinta);background:var(--placa2);border-radius:6px;padding:0 6px}
+.zg-nota{font-size:clamp(15px,1.3vw,18px);color:var(--suau)}
+.zg-nota b{font-size:1.2em;margin-right:4px}
 .panell-debat{border:2px dashed var(--org);border-radius:16px;padding:16px 22px;background:#15171f;display:flex;flex-direction:column;gap:10px}
 .panell-debat .seccio{color:var(--org)}
 .panell-debat p{font:800 clamp(22px,2.3vw,32px)/1.25 var(--display);color:#dfe5fb}
@@ -231,7 +240,8 @@ const yo = DEMO ? 'demo-profe' : N.elMeuId();
 /* ---------- sala anònima: la pissarra compta, els mòbils només envien {k, r} ---------- */
 const CODI_FIX = (new URLSearchParams(location.search).get('codi') || '').match(/^\d{4}$/)?.[0];   // ?codi=1234: el mateix codi cada classe (per a l'enllaç del Moodle)
 const sala = { codi: DEMO ? '0000' : CODI_FIX || N.nouCodi(), canal: null, presents: new Set(), vots: new Map(), revelats: new Set(), i: 0 };
-const opcionsDe = p => p.tipus === 'missatge' ? C.trucs : p.tipus === 'escena' ? p.vot?.opcions : p.opcions;
+const ZG = ['✅ Està bé', '⚠️ Depèn', '❌ No està bé'];
+const opcionsDe = p => p.tipus === 'zonagris' ? ZG : p.tipus === 'missatge' ? C.trucs : p.tipus === 'escena' ? p.vot?.opcions : p.opcions;
 const votable = p => !!(p.tipus === 'escena' ? p.vot : opcionsDe(p));
 const votsDe = i => { if (!sala.vots.has(i)) sala.vots.set(i, new Map()); return sala.vots.get(i); };
 const dins = () => [...sala.presents].filter(u => u !== yo).length;
@@ -243,7 +253,10 @@ if (!DEMO) sala.canal = N.connecta({ codi: sala.codi, uid: yo, prefix: 'tut-cara
     if (m.type !== 'vot') return;
     const i = sala.i, p = P[i];
     if (m.r !== String(i) || !votable(p) || sala.revelats.has(i)) return;
-    if (!Number.isInteger(m.k) || m.k < 0 || m.k >= opcionsDe(p).length) return;
+    const ok = p.tipus === 'zonagris'
+      ? Array.isArray(m.k) && m.k.length === p.casos.length && m.k.every(x => Number.isInteger(x) && x >= -1 && x < ZG.length)
+      : Number.isInteger(m.k) && m.k >= 0 && m.k < opcionsDe(p).length;
+    if (!ok) return;
     votsDe(i).set(m.from, m.k);
     sala.canal.envia('ack', { uid: m.from, r: m.r });
     xips(); difondre();
@@ -260,6 +273,8 @@ function difondre(ara = false) {
   let s = { fase: 'info', titol: 'Mira la pantalla', seccio: p.seccio || '', text: p.tipus === 'escena' ? p.pol.text : p.tipus === 'intro-historia' ? p.text : '' };
   if (p.tipus === 'escena') { s.titol = `El Pol · ${p.pol.titol}`; s.img = p.pol.img || ''; }
   if (p.tipus === 'portada') s = { fase: 'espera' };
+  else if (p.tipus === 'zonagris' && !sala.revelats.has(i)) s = { fase: 'vot', tipus: 'zonagris', r: String(i), pregunta: p.pregunta, opcions: ZG, casos: p.casos.map(c => c.text), seccio: p.seccio };
+  else if (p.tipus === 'zonagris') s = { fase: 'tancat', tipus: 'zonagris', r: String(i), seccio: p.seccio };
   else if (votable(p) && !sala.revelats.has(i)) s = { fase: 'vot', r: String(i), pregunta: p.tipus === 'escena' ? p.vot.pregunta : p.tipus === 'missatge' ? 'Quin truc fa servir?' : p.pregunta, opcions: opcionsDe(p), context: p.tipus === 'escena' ? p.pol.text : p.tipus === 'missatge' ? p.text : '', seccio: p.seccio };
   else if (votable(p)) s = { fase: 'tancat', r: String(i), opcions: opcionsDe(p), seccio: p.seccio };
   else if (p.tipus === 'final') s = { fase: 'fi', titol: p.titol };
@@ -274,6 +289,8 @@ function xips() {
   v.hidden = !(votable(p) && !sala.revelats.has(sala.i));
   if (!v.hidden) v.innerHTML = `<b>${votsDe(sala.i).size}</b> vots`;
 }
+/* zona grisa: comptes d'un cas concret */
+function comptesCas(i, j) { const v = [...votsDe(i).values()].map(a => a[j]).filter(x => x >= 0); return { c: ZG.map((_, k) => v.filter(x => x === k).length), t: v.length }; }
 function comptes(i) { const o = opcionsDe(P[i]), v = [...votsDe(i).values()]; return o.map((_, k) => v.filter(x => x === k).length); }
 function barres(i, { bona = null, real = null } = {}) {
   const o = opcionsDe(P[i]), c = comptes(i), t = c.reduce((a, b) => a + b, 0);
@@ -287,15 +304,18 @@ const cartellDreta = (p, i) => `<p class="pregunta" style="font-size:clamp(24px,
   ${votOResultat(i, { bona: p.correcta ?? null })}
   ${sala.revelats.has(i) ? `<p class="revela">${esc(p.resposta)}</p><span class="seccio">Com reconèixer un cartell fet amb IA</span><ul class="senyals">${p.senyals.map(s => `<li>${esc(s)}</li>`).join('')}</ul><p class="font">Font: ${esc(p.font)}</p>` : ''}`;
 
-/* en quantes decisions la majoria de la classe hauria fet una altra cosa que el Pol */
-function classeVsPol() {
-  const dec = P.map((p, i) => [p, i]).filter(([p, i]) => p.tipus === 'escena' && p.vot && votsDe(i).size);
-  if (!dec.length) return '';
-  const diferents = dec.filter(([p, i]) => { const c = comptes(i), m = Math.max(...c); return c.indexOf(m) !== p.vot.real; }).length;
-  return `<p class="classe-pol entra">La classe contra el Pol: en ${diferents} de ${dec.length} ${dec.length === 1 ? 'decisió' : 'decisions'}, la majoria de vosaltres hauria fet una altra cosa.<small>${diferents ? 'I tot i així, el Pol no és tonto: és el que fa molta gent quan no té temps de pensar i els amics hi van.' : 'Igual que el Pol. Per això funciona: és el que faria molta gent.'}</small></p>`;
-}
-
 const RENDER = {
+  zonagris: (p, i) => {
+    const rev = sala.revelats.has(i), EM = ['✅', '⚠️', '❌'];
+    return `<h1 class="titol-mig">${esc(p.titol)}</h1><p class="lede">${esc(p.pregunta)}</p>
+      <div class="zg">${p.casos.map((c, j) => {
+        const { c: n, t } = comptesCas(i, j);
+        return `<div class="zg-fila entra"><span class="zg-num">${j + 1}</span><span class="zg-text">${esc(c.text)}</span>
+          ${rev ? `<span class="zg-vots">${EM.map((e, k) => `<span class="${k === c.r ? 'bona' : ''}">${e} ${t ? Math.round(n[k] / t * 100) : 0}%</span>`).join('')}</span>
+          <span class="zg-nota"><b>${EM[c.r]}</b> ${esc(c.nota)}</span>` : ''}</div>`;
+      }).join('')}</div>
+      ${rev ? `<p class="frase" style="max-width:40ch">${esc(p.frase)}</p>` : ''}`;
+  },
   contrast: p => `<h1 class="titol-gran">${esc(p.titol)}</h1>
     <div class="contrast">
       <div class="cara si entra"><span class="seccio">✅ ${esc(p.si.titol)}</span><ul>${p.si.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
@@ -329,7 +349,7 @@ const RENDER = {
       <div class="costat org">${p.org.img ? `<img class="il" src="${esc(p.org.img)}" alt="">` : ''}<span class="qui">Mentrestant, qui ho organitza</span><h3>${esc(p.org.titol)}</h3><p>${esc(p.org.text)}</p></div>
     </div>
     ${p.vot ? `<div class="vot-escena"><p class="pregunta">${esc(p.vot.pregunta)}</p>${votOResultat(i, { real: p.vot.real })}${sala.revelats.has(i) ? `<p class="revela">${esc(p.vot.realText)}</p>${p.vot.frases ? `<div class="consells">${p.vot.frases.map(f => `<div class="entra">${esc(f)}</div>`).join('')}</div>` : ''}` : ''}</div>` : ''}`,
-  comparativa: p => `<h1 class="titol-gran">${esc(p.titol)}</h1>${classeVsPol()}
+  comparativa: p => `<h1 class="titol-gran">${esc(p.titol)}</h1>
     <table class="taula"><thead><tr><th></th><th class="p">El Pol</th><th class="o">Qui ho organitza</th></tr></thead>
     <tbody>${p.files.map(f => `<tr class="entra"><td>${esc(f[0])}</td><td>${esc(f[1])}</td><td>${esc(f[2])}</td></tr>`).join('')}</tbody></table>`,
   cartell: (p, i) => `<h2 class="titol-mig">${esc(p.titol)}</h2>
@@ -419,6 +439,7 @@ if (DEMO) {
     if (!votable(p) || sala.revelats.has(i)) return;
     const v = votsDe(i), n = opcionsDe(p).length;
     if (v.size >= 24) return;
+    if (p.tipus === 'zonagris') { v.set('a' + v.size, p.casos.map(c => Math.random() < .6 ? c.r : Math.floor(Math.random() * 3))); return xips(); }
     const pref = p.tipus === 'missatge' ? p.correcta : p.tipus === 'escena' ? p.vot.real : 0;
     v.set('a' + v.size, Math.random() < .55 ? pref : Math.floor(Math.random() * n));
     xips();

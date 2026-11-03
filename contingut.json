@@ -23,11 +23,11 @@
       "pregunta": "Per què creus que hi va anar la gent?",
       "opcions": [
         "Per diversió",
+        "Per curiositat, a mirar",
         "Per ràbia",
         "Per sentir-se part d'alguna cosa",
         "Per endur-se coses",
-        "Perquè hi anaven els amics",
-        "No ho sé"
+        "Perquè hi anaven els amics"
       ],
       "debat": [
         "Algú vol explicar la seva opció? No cal dir què ha votat."
@@ -151,17 +151,15 @@
           "No contesto"
         ],
         "real": 1,
-        "realText": "El Pol contesta «només a mirar». Però hi havia maneres de dir que no sense quedar malament:",
+        "realText": "El Pol contesta «només a mirar». N'hi ha que ho van dir així:",
         "frases": [
           "«Aquest divendres no puc. Quedem dissabte?»",
-          "«Ni sabeu qui ho organitza. Jo passo.»",
-          "«Si em pillen, a casa em maten. Passo.»",
-          "Silenciar el grup un parell de dies: ningú no se n'adona"
+          "«Si em pillen, a casa em maten. Passo.»"
         ]
       },
       "debat": [
         "Què costa més: dir que no a un desconegut o als amics?",
-        "Quina d'aquestes frases faríeu servir de veritat?"
+        "I vosaltres, quina frase faríeu servir per dir que no?"
       ]
     },
     {
@@ -189,7 +187,7 @@
         "realText": "El Pol es queda gravant uns minuts més, i el detenen. La màscara no ha servit de res: als vídeos se'l veu a ell i als seus amics."
       },
       "debat": [
-        "Si no fas res dolent, per què et pots ficar en un problema igualment?"
+        "Per què la màscara no l'ha protegit?"
       ]
     },
     {
@@ -198,12 +196,12 @@
       "hora": "Les setmanes següents",
       "pol": {
         "titol": "Les conseqüències",
-        "text": "Com que és menor, el seu cas va a la Fiscalia de Menors. Com la majoria dels menors detinguts el dia 24, queda en llibertat vigilada; alguns han acabat internats en un centre. I els seus pares poden haver de pagar els danys.",
+        "text": "El Pol queda investigat per desordres públics i el seu cas va a la Fiscalia de Menors. Si el jutge el troba responsable, li poden imposar llibertat vigilada o tasques per a la comunitat, i els seus pares poden haver de pagar els danys. Ell diu que només gravava, però els seus vídeos el situen allà.",
         "img": "img/5-pol-consequencies.jpg"
       },
       "org": {
-        "titol": "Només si el troben",
-        "text": "A qui ho organitza no el detenen aquell dia: cal una investigació de setmanes per arribar-hi. Alguns ja hi han caigut: dues noies de 14 i 17 anys a Barcelona, un noi de 17 anys a València (internat en un centre de menors) i el presumpte fundador de Blocus a Picanya, que ha passat a disposició judicial."
+        "titol": "També hi han caigut",
+        "text": "Aquell dia no els detenen, però també els busquen. En una setmana en van trobar uns quants, i sorpresa: alguns dels presumptes organitzadors tenien 14, 17 i 17 anys. El presumpte fundador de Blocus, detingut a Picanya, ha passat a disposició judicial."
       },
       "debat": [
         "Qui acaba pagant, al final? Pensa en els pares i en els botiguers."
@@ -226,18 +224,18 @@
         ],
         [
           "Qui és més fàcil d'enxampar?",
-          "Ell: càmeres, testimonis i el mòbil ple de vídeos",
-          "Cal una investigació de setmanes"
+          "Ell, aquell mateix dia",
+          "Costa més… però en una setmana els van trobar"
         ],
         [
-          "Quan arriben les conseqüències?",
-          "Aquell mateix dia",
-          "Només si el troben. Alguns ja hi han caigut"
+          "Al final, qui hi ha caigut?",
+          "Els dos",
+          "Els dos"
         ]
       ],
       "debat": [
-        "Organitzar des de casa et lliura de les conseqüències?",
-        "Qui ha treballat per a qui?"
+        "Qui ha treballat per a qui?",
+        "I si qui ho organitza fos algú del vostre institut buscant seguidors?"
       ]
     },
     {
@@ -285,24 +283,24 @@
           "nosap": "Si era l'objectiu des del principi."
         },
         {
-          "nom": "Ultradreta",
-          "text": "Sembrar el caos perquè tota protesta sembli violència.",
-          "sap": "És una de les hipòtesis que s'han apuntat.",
-          "nosap": "No consta cap vincle demostrat."
+          "nom": "Fer-se viral",
+          "text": "Joves que buscaven seguidors i visualitzacions, i se'ls va escapar de les mans.",
+          "sap": "Alguns dels presumptes administradors detinguts són menors.",
+          "nosap": "Si aquest era el motiu."
         },
         {
-          "nom": "Ingerència estrangera",
-          "text": "Un altre país que vol desestabilitzar.",
-          "sap": "Se n'ha parlat en alguns mitjans.",
-          "nosap": "La policia diu que no en veu cap indici."
+          "nom": "Ultradreta",
+          "text": "Sembrar el caos perquè tota protesta sembli violència.",
+          "sap": "Fonts del Govern espanyol apunten al seu entorn, sense atribuir-ho a cap partit.",
+          "nosap": "No consta cap vincle demostrat."
         }
       ],
       "pregunta": "Quina et sembla més probable?",
       "opcions": [
         "Efecte mirall",
         "Oportunisme",
+        "Fer-se viral",
         "Ultradreta",
-        "Ingerència estrangera",
         "No ho sé"
       ],
       "tancament": "Partits de colors diferents s'han acusat els uns als altres. Quan no se sap qui hi ha darrere, guanya qui aconsegueix que culpem algú sense proves.",
@@ -330,52 +328,67 @@
         "La gent que protesta de manera pacífica",
         "Ningú"
       ],
-      "resposta": "Hi perden tots, menys qui ho organitza. I n'hi ha un que s'oblida: quan una protesta acaba en saquejos, la gent associa protesta amb violència. Blocus va agafar el nom dels bloquejos d'instituts dels estudiants francesos; aquí, ara, aquest nom només fa pensar en aparadors trencats. Qualsevol protesta pacífica, per l'educació, l'habitatge o el que sigui, perd suport.",
+      "resposta": "Hi perden tots: botiguers, veïns, famílies… i qualsevol protesta pacífica, que ara sembla violència.",
       "debat": [
-        "Coneixeu alguna protesta que hàgiu vist per la tele i que fos pacífica? Com la recordeu?",
-        "Si volguéssiu canviar alguna cosa de veritat, com ho faríeu?"
+        "Recordeu alguna protesta pacífica que hàgiu vist? Com la recordeu?",
+        "Si volguéssiu canviar alguna cosa, com ho faríeu?"
       ]
     },
     {
-      "tipus": "contrast",
+      "tipus": "zonagris",
       "seccio": "Qui hi perd?",
       "titol": "Protestar no és saquejar",
-      "si": {
-        "titol": "És legítim",
-        "items": [
-          "Manifestar-se",
-          "Lluitar pels teus drets",
-          "Organitzar-se amb altra gent",
-          "Fer vaga, signar, fer soroll"
-        ]
-      },
-      "no": {
-        "titol": "No ho és",
-        "items": [
-          "Trencar aparadors",
-          "Saquejar botigues",
-          "Fer mal a persones",
-          "Cremar el que és de tothom"
-        ]
-      },
-      "frase": "Protestar és un dret, i organitzar-se, també. El vandalisme i el saqueig no ho són. I a més fan que ningú no t'escolti.",
+      "pregunta": "Per a cada cas: ✅ està bé, ⚠️ depèn, ❌ no està bé",
+      "casos": [
+        {
+          "text": "Anar a una manifestació per defensar l'educació",
+          "r": 0,
+          "nota": "És un dret."
+        },
+        {
+          "text": "Organitzar una vaga d'estudiants per WhatsApp",
+          "r": 0,
+          "nota": "Organitzar-se també és un dret."
+        },
+        {
+          "text": "Entrar al canal de Blocus per curiositat",
+          "r": 1,
+          "nota": "No és delicte, però ets part del comptador que el fa semblar gran."
+        },
+        {
+          "text": "Gravar la policia carregant contra gent pacífica",
+          "r": 0,
+          "nota": "Documentar un abús és legítim. Compte a difondre cares, sobretot de menors."
+        },
+        {
+          "text": "Gravar com saquegen una botiga i penjar-ho",
+          "r": 2,
+          "nota": "És publicitat gratis per a qui ho organitza, i una prova contra tu i els teus amics."
+        },
+        {
+          "text": "Fer una pintada a la persiana d'una botiga",
+          "r": 2,
+          "nota": "És vandalisme, encara que sigui petit: ho paga qui no hi té res a veure."
+        }
+      ],
+      "frase": "Protestar i organitzar-se és un dret. El vandalisme i el saqueig, no: i a més perjudiquen les causes de veritat.",
       "debat": [
-        "Per què creieu que una protesta pacífica pot aconseguir més coses que un aldarull?"
+        "Quin cas us ha costat més de decidir? Per què?"
       ]
     },
     {
       "tipus": "missatge",
       "seccio": "Desmunta el missatge",
-      "text": "Divendres o mai. Si no ho fem ara, no ho farem.",
-      "correcta": 0,
-      "explicacio": "Pressa: sense temps per pensar, fas el que diu el grup."
+      "text": "Ja som més de 2.000. No estàs sol.",
+      "correcta": 2,
+      "explicacio": "Sentir-se part d'una cosa gran. Però 2.000 membres d'un canal no són 2.000 persones al carrer."
     },
     {
       "tipus": "missatge",
       "seccio": "Desmunta el missatge",
-      "text": "Ells viuen de luxe amb els nostres impostos. Ja n'hi ha prou.",
-      "correcta": 1,
-      "explicacio": "Un «ells» que no és ningú en concret: cadascú hi posa la seva ràbia."
+      "text": "No voleu tornar a casa amb iPhones? 😏",
+      "correcta": 3,
+      "explicacio": "Una promesa de premi. Qui la fa no correrà cap risc per complir-la."
     },
     {
       "tipus": "pregunta",
@@ -384,7 +397,7 @@
       "pregunta": "De tot això, quina idea t'emportes?",
       "opcions": [
         "Qui organitza fa servir la teva cara i els teus vídeos",
-        "Al carrer t'enxampen el mateix dia; a qui organitza, potser mai",
+        "Al carrer t'enxampen el mateix dia; qui organitza també cau",
         "Protestar és un dret; saquejar, no",
         "Res de nou"
       ]
@@ -393,10 +406,10 @@
       "tipus": "final",
       "seccio": "Per acabar",
       "titol": "Qui et demana que donis la cara no hi posa la seva.",
-      "trucs": "Pressa, un enemic comú, premis, «passa-ho» i falsa sensació d'anonimat: són els mateixos trucs que fan servir les estafes per missatge.",
+      "trucs": "Pressa, «som molts», premis, «passa-ho» i falsa sensació d'anonimat: són els mateixos trucs que fan servir les estafes per missatge.",
       "consells": [
         "Si no saps qui hi ha darrere, no ho reenviïs",
-        "No gravis: el teu vídeo és publicitat gratis per a qui ho organitza",
+        "No gravis el saqueig per penjar-lo: és publicitat gratis i una prova contra tu i els teus amics",
         "Silencia el grup o surt-ne: no cal donar explicacions",
         "«Aquest cop passo» també és una resposta"
       ],
@@ -406,8 +419,8 @@
       "img": "img/6-final-cami.jpg",
       "idees": [
         "Qui organitza fa servir la teva cara, els teus vídeos i els teus amics: la feina la fas tu.",
-        "Tothom s'hi juga alguna cosa, però no igual: al carrer t'enxampen aquell mateix dia; a qui organitza, només si una investigació el troba.",
-        "Manifestar-se i organitzar-se per defensar els teus drets és legítim. El vandalisme i el saqueig no ho són, i fan que ningú no t'escolti."
+        "Tothom s'hi juga alguna cosa: al carrer t'enxampen aquell mateix dia, i qui ho organitza també cau, encara que trigui més.",
+        "Manifestar-se i organitzar-se per defensar els teus drets és legítim. El vandalisme i el saqueig no ho són."
       ]
     },
     {
