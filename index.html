@@ -4,405 +4,51 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0f0f10">
-<title>Qui dona la cara? · Tutoria</title>
+<title>Qui dona la cara?</title>
+<script>
+/* Enllaços directes: ?c=1234 → alumne (Moodle), ?codi=1234 o ?demo → profe */
+(() => {
+  const q = new URLSearchParams(location.search);
+  if (q.has('c')) location.replace('movil.html' + location.search);
+  else if (q.has('codi') || q.has('demo')) location.replace('profe.html' + location.search);
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..900&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,800..900&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@700&display=swap">
 <style>
-:root{
-  --fons:#0f0f10; --placa:#1a1a1d; --placa2:#242428; --linia:#323238;
-  --tinta:#f4f4f2; --suau:#a7a7ad; --fosc:#0f0f10;
-  --pol:#f5d90a; --org:#7b96ff; --alerta:#ff5a4e; --ok:#3ecf8e;
-  --display:"Archivo",ui-sans-serif,system-ui,sans-serif;
-  --text:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
-}
+:root{--fons:#0f0f10;--placa:#1a1a1d;--linia:#323238;--tinta:#f4f4f2;--suau:#a7a7ad;--fosc:#0f0f10;--pol:#f5d90a;--org:#7b96ff;
+  --display:"Archivo",ui-sans-serif,system-ui,sans-serif;--text:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
 *{box-sizing:border-box}
-[hidden]{display:none!important}
-html,body{margin:0}
-body{background:var(--fons);color:var(--tinta);font:400 20px/1.5 var(--text);display:flex;flex-direction:column;min-height:100vh}
-button,input{font:inherit;color:inherit}
-h1,h2,h3{font-family:var(--display);font-weight:900;font-stretch:110%;margin:0;line-height:1.02;text-wrap:balance;letter-spacing:-.015em}
-p{margin:0}
-a{color:var(--pol)}
-:focus-visible{outline:3px solid var(--pol);outline-offset:3px}
-
-.dalt{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:16px clamp(16px,3vw,40px);border-bottom:1px solid var(--linia)}
-.seccio{font:700 14px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--suau)}
-.punts{display:flex;gap:4px;flex:1;max-width:520px}
-.punts i{flex:1;height:5px;border-radius:3px;background:var(--placa2)}
-.punts i.fet{background:var(--suau)}
-.punts i.ara{background:var(--pol)}
-.xips{display:flex;gap:8px;flex-wrap:wrap}
-.xip{background:var(--placa);border:1px solid var(--linia);border-radius:99px;padding:4px 12px;font:700 15px var(--mono);color:var(--suau)}
-.xip b{color:var(--tinta)}
-
-.escenari{flex:1;width:100%;max-width:1360px;margin:0 auto;padding:clamp(20px,3vw,40px) clamp(16px,3vw,40px);display:flex;flex-direction:column;gap:26px;justify-content:center}
-.comandament{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px clamp(16px,3vw,40px);border-top:1px solid var(--linia);position:sticky;bottom:0;background:var(--fons);z-index:5}
-.btn{border:1.5px solid var(--linia);border-radius:12px;padding:12px 22px;font-weight:700;font-size:18px;background:var(--placa);cursor:pointer}
-.btn:hover{background:var(--placa2)}
-.btn.primari{background:var(--pol);color:var(--fosc);border-color:var(--pol)}
-.btn.gran{font-size:21px;padding:14px 26px}
-.btn:disabled{opacity:.35;cursor:not-allowed}
-.tecla{font:500 12px var(--mono);opacity:.75;margin-left:8px;border:1px solid currentColor;border-radius:6px;padding:0 6px}
-
-.titol-gran{font-size:clamp(46px,7vw,104px)}
-.titol-mig{font-size:clamp(36px,4.6vw,64px)}
-.lede{font-size:clamp(21px,2.1vw,28px);color:var(--suau);max-width:56ch}
-.font{font:500 14px var(--mono);color:var(--suau)}
-
-/* portada */
-.portada{display:grid;grid-template-columns:minmax(0,1.2fr) auto;gap:40px;align-items:center}
-@media (max-width:900px){.portada{grid-template-columns:1fr}}
-.portada .marca{font:900 clamp(56px,9vw,132px)/.92 var(--display);font-stretch:125%;letter-spacing:-.03em}
-.portada .marca span{color:var(--pol)}
-.sala{background:var(--placa);border:1px solid var(--linia);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
-.sala .url{font:700 clamp(17px,1.6vw,22px) var(--mono);color:var(--pol);word-break:break-all}
-.sala .codi{font:900 clamp(70px,8vw,120px)/1 var(--display);font-stretch:125%;letter-spacing:.04em}
-.qr{background:#fff;padding:12px;border-radius:14px;line-height:0}
-
-/* opcions i barres */
-.pregunta{font:800 clamp(30px,3.6vw,52px)/1.1 var(--display)}
-.ops{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.op{display:flex;align-items:center;gap:14px;background:var(--placa);border:1.5px solid var(--linia);border-radius:14px;padding:14px 18px;font:700 clamp(18px,1.7vw,24px)/1.2 var(--text)}
-.op .ll{flex:none;width:38px;height:38px;border-radius:9px;display:grid;place-items:center;background:var(--placa2);font:700 18px var(--mono)}
-.barres{display:flex;flex-direction:column;gap:10px}
-.b{display:grid;grid-template-columns:minmax(200px,34%) 1fr 4.5ch;gap:16px;align-items:center;font:700 clamp(17px,1.6vw,23px) var(--text)}
-@media (max-width:760px){.b{grid-template-columns:1fr 4.5ch}.b .p{grid-column:1/-1}}
-.b .p{height:32px;border-radius:8px;background:var(--placa2);overflow:hidden}
-.b .p i{display:block;height:100%;width:0;background:var(--suau);border-radius:8px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
-.b.bona .p i{background:var(--ok)}
-.b.real .p i{background:var(--pol)}
-.b .n{font:700 clamp(20px,2vw,28px) var(--mono);text-align:right}
-.b .marca-ok{color:var(--ok);margin-left:6px}
-.revela{border-left:6px solid var(--pol);background:var(--placa);border-radius:12px;padding:16px 20px;font:700 clamp(20px,2vw,28px)/1.3 var(--text)}
-.revela.ok{border-color:var(--ok)}
-
-/* reels */
-.reels{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
-.reel{width:min(360px,100%);display:flex;flex-direction:column;gap:8px}
-.reels:has(.reel:only-child) .reel{width:min(420px,100%)}
-.reel iframe{width:100%;aspect-ratio:9/16;max-height:66vh;border:0;border-radius:16px;background:#000}
-.reel .acc{display:flex;gap:8px;justify-content:space-between;align-items:center;font-size:14px;color:var(--suau)}
-.reel .acc button{background:none;border:1px solid var(--linia);border-radius:8px;padding:2px 10px;cursor:pointer;color:var(--suau)}
-.afegir{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center}
-.afegir input{flex:1;min-width:260px;max-width:620px;background:var(--placa);border:1.5px solid var(--linia);border-radius:12px;padding:12px 14px;font:500 15px var(--mono)}
-.buit{border:2px dashed var(--linia);border-radius:18px;padding:30px;text-align:center;color:var(--suau);max-width:640px;margin:0 auto}
-
-/* dades */
-.xifres{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:820px){.xifres{grid-template-columns:1fr}}
-.xifra{background:var(--placa);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px}
-.xifra b{font:900 clamp(64px,8vw,120px)/1 var(--display);font-stretch:120%;color:var(--pol)}
-.xifra span{font-size:clamp(18px,1.6vw,22px);color:var(--suau)}
-.frase{font:800 clamp(26px,3vw,42px)/1.15 var(--display);max-width:30ch}
-
-/* escena partida */
-.hora{font:700 clamp(18px,1.6vw,22px) var(--mono);color:var(--suau)}
-.partida{display:grid;grid-template-columns:1.25fr 1fr;gap:18px}
-@media (max-width:900px){.partida{grid-template-columns:1fr}}
-.costat{border-radius:20px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;background:var(--placa)}
-.costat .qui{font:700 13px var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.costat h3{font-size:clamp(26px,2.6vw,38px)}
-.costat p{font-size:clamp(19px,1.8vw,25px);line-height:1.4}
-.costat.pol{border-top:6px solid var(--pol)}
-.costat.pol .qui{color:var(--pol)}
-.costat.org{border-top:6px solid var(--org);background:#15171f;color:#cfd6ee}
-.costat.org .qui{color:var(--org)}
-.vot-escena{display:flex;flex-direction:column;gap:12px}
-.vot-escena .pregunta{font-size:clamp(24px,2.4vw,34px)}
-
-/* comparativa */
-.taula{width:100%;border-collapse:separate;border-spacing:0 10px;font-size:clamp(18px,1.8vw,26px)}
-.taula th{font:700 14px var(--mono);letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:0 18px;color:var(--suau)}
-.taula th.p{color:var(--pol)} .taula th.o{color:var(--org)}
-.taula td{background:var(--placa);padding:16px 18px;font-weight:700}
-.taula td:first-child{border-radius:12px 0 0 12px;color:var(--suau);font-weight:400}
-.taula td:last-child{border-radius:0 12px 12px 0;color:#cfd6ee}
-
-/* cartell */
-.cartell-grid{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start}
-@media (max-width:900px){.cartell-grid{grid-template-columns:1fr}}
-.cartell{width:min(330px,100%);aspect-ratio:3/4.2;border-radius:6px;position:relative;overflow:hidden;
-  background:radial-gradient(120% 80% at 50% 110%,#ff4d00,transparent 60%),radial-gradient(80% 60% at 20% 10%,#4b1d6b,transparent 70%),#120a1c;
-  display:flex;flex-direction:column;justify-content:space-between;padding:22px;box-shadow:0 20px 60px #0009}
-.cartell .t{font:900 54px/.88 var(--display);font-stretch:125%;color:#fff;text-shadow:0 0 18px #ff6a00aa;letter-spacing:-.02em}
-.cartell .t span{display:inline-block;transform:skewX(-8deg)}
-.cartell .s{font:700 15px var(--mono);color:#ffd5b8}
-.cartell .baix{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
-.cartell .qrfals{width:84px;height:84px;background:repeating-conic-gradient(#fff 0 25%,#111 0 50%) 0 0/14px 14px;border:5px solid #fff;position:relative}
-.cartell .qrfals::after{content:"QR\A desactivat";white-space:pre;position:absolute;inset:0;display:grid;place-items:center;background:#000c;color:#fff;font:700 11px/1.2 var(--mono);text-align:center}
-.cartell .etiq{position:absolute;left:0;right:0;bottom:0;background:var(--pol);color:var(--fosc);font:700 11px var(--mono);padding:4px 0;letter-spacing:.12em;text-align:center}
-.cartell{padding-bottom:36px}
-.senyals{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
-.senyals li{background:var(--placa);border-radius:10px;padding:10px 14px;font-weight:700;font-size:clamp(17px,1.5vw,21px)}
-.senyals li::before{content:"🔍 "}
-
-/* hipòtesis */
-.cartes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-@media (max-width:1100px){.cartes{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:640px){.cartes{grid-template-columns:1fr}}
-.carta{background:var(--placa);border:1px solid var(--linia);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;font-size:16px}
-.carta h3{font-size:24px}
-.carta .sap,.carta .nosap{font-size:15px;border-radius:8px;padding:8px 10px}
-.carta .sap{background:#3ecf8e1a}
-.carta .sap b{color:var(--ok)}
-.carta .nosap{background:#ff5a4e14}
-.carta .nosap b{color:var(--alerta)}
-
-/* culpables i final */
-.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-@media (max-width:820px){.tres{grid-template-columns:1fr}}
-.tres div{background:var(--placa);border-radius:16px;padding:22px;font:800 clamp(24px,2.6vw,36px)/1.1 var(--display);text-align:center}
-.consells{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media (max-width:760px){.consells{grid-template-columns:1fr}}
-.consells div{background:var(--placa);border-left:5px solid var(--pol);border-radius:10px;padding:14px 18px;font-weight:700;font-size:clamp(18px,1.7vw,24px)}
-
-/* missatge */
-.bombolla{align-self:flex-start;max-width:min(760px,100%);background:#1f2c34;border-radius:4px 22px 22px 22px;padding:20px 26px;font:700 clamp(28px,3.2vw,46px)/1.2 var(--text);position:relative}
-.bombolla small{display:block;font:500 14px var(--mono);color:#8aa0ad;margin-bottom:6px}
-.ops.trucs{grid-template-columns:repeat(3,1fr)}
-@media (max-width:820px){.ops.trucs{grid-template-columns:1fr 1fr}}
-
-.fonts{display:flex;flex-direction:column;gap:10px;max-width:980px}
-.fonts a{display:block;background:var(--placa);border-radius:10px;padding:12px 16px;text-decoration:none;color:var(--tinta)}
-.fonts a b{color:var(--pol);margin-right:8px}
-
-.panell-debat{border:2px dashed var(--org);border-radius:16px;padding:16px 22px;background:#15171f;display:flex;flex-direction:column;gap:10px}
-.panell-debat .seccio{color:var(--org)}
-.panell-debat p{font:800 clamp(22px,2.3vw,32px)/1.25 var(--display);color:#dfe5fb}
-.classe-pol{background:var(--placa);border-left:6px solid var(--org);border-radius:12px;padding:16px 20px;font:800 clamp(22px,2.2vw,32px)/1.25 var(--display)}
-.classe-pol small{display:block;font:400 clamp(16px,1.4vw,19px) var(--text);color:var(--suau);margin-top:6px}
-.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:var(--tinta);color:var(--fosc);padding:10px 18px;border-radius:12px;font-weight:700;z-index:9}
-.demo{position:fixed;bottom:76px;left:10px;background:var(--pol);color:var(--fosc);font:700 12px var(--mono);padding:4px 10px;border-radius:8px;z-index:9}
-.entra{animation:entra .45s cubic-bezier(.2,.9,.3,1)}
-@keyframes entra{from{opacity:0;transform:translateY(12px)}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+html,body{margin:0;min-height:100%}
+body{background:var(--fons);color:var(--tinta);font:400 18px/1.5 var(--text);min-height:100vh;display:grid;place-items:center;padding:24px 16px;
+  background-image:linear-gradient(180deg,#0f0f10cc,#0f0f10f2),url("img/4-pol-carrer.jpg");background-size:cover;background-position:center}
+main{width:min(880px,100%);display:flex;flex-direction:column;gap:28px;text-align:center;align-items:center}
+.seccio{font:700 14px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--suau)}
+h1{margin:0;font:900 clamp(54px,11vw,120px)/.92 var(--display);font-stretch:125%;letter-spacing:-.03em;text-wrap:balance}
+h1 span{color:var(--pol)}
+.botons{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%}
+@media (max-width:620px){.botons{grid-template-columns:1fr}}
+a.boto{display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;text-decoration:none;color:var(--fosc);border-radius:22px;padding:28px 20px;min-height:170px;
+  font:900 clamp(28px,4vw,38px)/1 var(--display);box-shadow:0 8px 0 #0009;transition:transform .08s,box-shadow .08s}
+a.boto:active{transform:translateY(5px);box-shadow:0 3px 0 #0009}
+a.boto:focus-visible{outline:4px solid var(--tinta);outline-offset:4px}
+a.boto .ic{font-size:44px;line-height:1}
+a.boto small{font:700 15px var(--text);opacity:.8}
+.alumne{background:var(--pol)}
+.profe{background:var(--org)}
+.nota{color:var(--suau);font-size:15px;max-width:52ch}
 </style>
 </head>
 <body>
-<div class="demo" id="demo" hidden>MODE DEMO · vots simulats</div>
-<header class="dalt">
-  <span class="seccio" id="seccio">Tutoria</span>
-  <div class="punts" id="punts" aria-hidden="true"></div>
-  <div class="xips"><span class="xip" id="x-codi"></span><span class="xip" id="x-dins"></span><span class="xip" id="x-vots" hidden></span></div>
-</header>
-<main class="escenari" id="escenari"></main>
-<footer class="comandament">
-  <button class="btn" id="b-enrere" type="button">← Enrere</button>
-  <button class="btn" id="b-debat" type="button" hidden>💬 Per debatre<span class="tecla">D</span></button>
-  <button class="btn primari gran" id="b-seguent" type="button"></button>
-</footer>
-<div class="toast" id="toast" role="status" hidden></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script type="module">
-const $ = s => document.querySelector(s);
-const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const LL = 'ABCDEF';
-let toastT;
-const toast = (m, ms = 2600) => { const t = $('#toast'); t.textContent = m; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => t.hidden = true, ms); };
-
-const DEMO = new URLSearchParams(location.search).has('demo');
-const N = DEMO ? null : await import('./sala.js');
-const C = await fetch('contingut.json').then(r => r.json());
-const P = C.passos;
-const BASE = location.origin + location.pathname.replace(/[^/]*$/, '');
-const MOVIL_URL = BASE + 'movil.html';
-const ALUMNE_URL = BASE + 'alumne/';   // enllaç curt per dictar o posar al Moodle
-const yo = DEMO ? 'demo-profe' : N.elMeuId();
-
-/* ---------- sala anònima: la pissarra compta, els mòbils només envien {k, r} ---------- */
-const CODI_FIX = (new URLSearchParams(location.search).get('codi') || '').match(/^\d{4}$/)?.[0];   // ?codi=1234: el mateix codi cada classe (per a l'enllaç del Moodle)
-const sala = { codi: DEMO ? '0000' : CODI_FIX || N.nouCodi(), canal: null, presents: new Set(), vots: new Map(), revelats: new Set(), i: 0 };
-const opcionsDe = p => p.tipus === 'missatge' ? C.trucs : p.tipus === 'escena' ? p.vot?.opcions : p.opcions;
-const votable = p => !!(p.tipus === 'escena' ? p.vot : opcionsDe(p));
-const votsDe = i => { if (!sala.vots.has(i)) sala.vots.set(i, new Map()); return sala.vots.get(i); };
-const dins = () => [...sala.presents].filter(u => u !== yo).length;
-
-if (!DEMO) sala.canal = N.connecta({ codi: sala.codi, uid: yo, prefix: 'tut-cara-',
-  onPresencia: u => { sala.presents = new Set(u); xips(); difondre(); },
-  onMissatge: m => {
-    if (m.type === 'hola') return difondre(true);
-    if (m.type !== 'vot') return;
-    const i = sala.i, p = P[i];
-    if (m.r !== String(i) || !votable(p) || sala.revelats.has(i)) return;
-    if (!Number.isInteger(m.k) || m.k < 0 || m.k >= opcionsDe(p).length) return;
-    votsDe(i).set(m.from, m.k);
-    sala.canal.envia('ack', { uid: m.from, r: m.r });
-    xips(); difondre();
-  },
-  onEstat: st => { if (st === 'error') toast('Connexió inestable… reintentant'); } });
-window.addEventListener('beforeunload', () => sala.canal?.envia('estat', { s: { fase: 'cerrada' } }));
-
-let difT = null;
-function difondre(ara = false) {
-  if (!sala.canal) return;
-  if (!ara) { if (!difT) difT = setTimeout(() => { difT = null; difondre(true); }, 200); return; }
-  clearTimeout(difT); difT = null;
-  const i = sala.i, p = P[i];
-  let s = { fase: 'info', titol: 'Mira la pantalla', seccio: p.seccio || '', text: p.tipus === 'escena' ? p.pol.text : p.tipus === 'intro-historia' ? p.text : '' };
-  if (p.tipus === 'escena') s.titol = `El Pol · ${p.pol.titol}`;
-  if (p.tipus === 'portada') s = { fase: 'espera' };
-  else if (votable(p) && !sala.revelats.has(i)) s = { fase: 'vot', r: String(i), pregunta: p.tipus === 'escena' ? p.vot.pregunta : p.tipus === 'missatge' ? 'Quin truc fa servir?' : p.pregunta, opcions: opcionsDe(p), context: p.tipus === 'escena' ? p.pol.text : p.tipus === 'missatge' ? p.text : '', seccio: p.seccio };
-  else if (votable(p)) s = { fase: 'tancat', r: String(i), opcions: opcionsDe(p), seccio: p.seccio };
-  else if (p.tipus === 'final') s = { fase: 'fi', titol: p.titol };
-  sala.canal.envia('estat', { s });
-}
-
-/* ---------- pintar ---------- */
-function xips() {
-  $('#x-codi').innerHTML = DEMO ? 'DEMO' : `Codi <b>${sala.codi}</b>`;
-  $('#x-dins').innerHTML = `<b>${DEMO ? 24 : dins()}</b> a dins`;
-  const p = P[sala.i], v = $('#x-vots');
-  v.hidden = !(votable(p) && !sala.revelats.has(sala.i));
-  if (!v.hidden) v.innerHTML = `<b>${votsDe(sala.i).size}</b> vots`;
-}
-function comptes(i) { const o = opcionsDe(P[i]), v = [...votsDe(i).values()]; return o.map((_, k) => v.filter(x => x === k).length); }
-function barres(i, { bona = null, real = null } = {}) {
-  const o = opcionsDe(P[i]), c = comptes(i), t = c.reduce((a, b) => a + b, 0);
-  return `<div class="barres">${o.map((x, k) => `<div class="b${k === bona ? ' bona' : ''}${k === real ? ' real' : ''}">
-    <span>${esc(x)}${k === bona ? '<span class="marca-ok">✓</span>' : ''}</span><span class="p"><i data-w="${t ? c[k] / t * 100 : 0}"></i></span><span class="n">${t ? Math.round(c[k] / t * 100) : 0}%</span></div>`).join('')}</div>`;
-}
-const opsHTML = (o, cls = '') => `<div class="ops ${cls}">${o.map((x, k) => `<div class="op"><span class="ll">${LL[k]}</span><span>${esc(x)}</span></div>`).join('')}</div>`;
-const votOResultat = (i, extra = {}) => sala.revelats.has(i) ? barres(i, extra) : opsHTML(opcionsDe(P[i]), extra.cls || '');
-
-const cartellDreta = (p, i) => `<p class="pregunta" style="font-size:clamp(24px,2.4vw,34px)">${esc(p.pregunta)}</p>
-  ${votOResultat(i, { bona: p.correcta ?? null })}
-  ${sala.revelats.has(i) ? `<p class="revela">${esc(p.resposta)}</p><span class="seccio">Com reconèixer un cartell fet amb IA</span><ul class="senyals">${p.senyals.map(s => `<li>${esc(s)}</li>`).join('')}</ul><p class="font">Font: ${esc(p.font)}</p>` : ''}`;
-
-/* en quantes decisions la majoria de la classe hauria fet una altra cosa que el Pol */
-function classeVsPol() {
-  const dec = P.map((p, i) => [p, i]).filter(([p, i]) => p.tipus === 'escena' && p.vot && votsDe(i).size);
-  if (!dec.length) return '';
-  const diferents = dec.filter(([p, i]) => { const c = comptes(i), m = Math.max(...c); return c.indexOf(m) !== p.vot.real; }).length;
-  return `<p class="classe-pol entra">La classe contra el Pol: en ${diferents} de ${dec.length} ${dec.length === 1 ? 'decisió' : 'decisions'}, la majoria de vosaltres hauria fet una altra cosa.<small>${diferents ? 'I tot i així, el Pol no és tonto: és el que fa molta gent quan no té temps de pensar i els amics hi van.' : 'Igual que el Pol. Per això funciona: és el que faria molta gent.'}</small></p>`;
-}
-
-const RENDER = {
-  portada: () => `<div class="portada entra">
-      <div style="display:flex;flex-direction:column;gap:20px">
-        <span class="seccio">Tutoria · Blocus</span>
-        <h1 class="marca">Qui dona<br><span>la cara?</span></h1>
-        <p class="lede">Una activitat per entendre com funciona, sense sermons. Les respostes són anònimes.</p>
-      </div>
-      <div class="sala"><span class="font">ALUMNES · entreu des del mòbil a</span><b class="url">${esc(ALUMNE_URL.replace(/^https?:\/\//, ''))}</b><span class="font">amb el codi</span><span class="codi">${sala.codi}</span><div class="qr" id="qr"></div></div>
-    </div>`,
-  pregunta: (p, i) => `<span class="seccio">${esc(p.titol)}</span><h2 class="pregunta">${esc(p.pregunta)}</h2>${votOResultat(i, { bona: p.correcta ?? null })}${sala.revelats.has(i) && p.resposta ? `<p class="revela ok">${esc(p.resposta)}</p>` : ''}`,
-  reels: (p, i) => {
-    const fixos = p.reels || [], llista = [...fixos, ...propis(i)];
-    return `<h2 class="titol-mig">${esc(p.titol)}</h2>${p.text ? `<p class="lede">${esc(p.text)}</p>` : ''}
-      ${llista.length ? `<div class="reels">${llista.map((u, k) => `<div class="reel">${incrusta(u)}<div class="acc"><a href="${esc(u)}" target="_blank" rel="noopener">Obrir l'original ↗</a>${k >= fixos.length ? `<button type="button" data-treu="${k - fixos.length}">Treure</button>` : ''}</div></div>`).join('')}</div>`
-        : `<div class="buit">Encara no hi ha cap reel. Enganxa a sota l'enllaç d'Instagram, TikTok o YouTube.</div>`}
-      <form class="afegir" id="f-reel"><input id="i-reel" placeholder="https://www.instagram.com/reel/…" aria-label="Enllaç del reel" autocomplete="off"><button class="btn" type="submit">Afegir reel</button></form>`;
-  },
-  dades: p => `<h2 class="titol-mig">${esc(p.titol)}</h2>
-    <div class="xifres">${p.xifres.map(x => `<div class="xifra entra"><b>${esc(x.n)}</b><span>${esc(x.text)}</span></div>`).join('')}</div>
-    <p class="frase">${esc(p.frase)}</p><p class="font">Font: ${esc(p.font)}</p>`,
-  'intro-historia': p => `<span class="seccio">Història inventada · fets reals</span><h1 class="titol-gran">${esc(p.titol)}</h1><p class="lede">${esc(p.text)}</p>
-    <div class="partida"><div class="costat pol"><span class="qui">El Pol</span><h3>Al carrer</h3></div><div class="costat org"><span class="qui">Qui ho organitza</span><h3>A casa</h3></div></div>`,
-  escena: (p, i) => `<span class="hora">${esc(p.hora)}</span>
-    <div class="partida entra">
-      <div class="costat pol"><span class="qui">El Pol</span><h3>${esc(p.pol.titol)}</h3><p>${esc(p.pol.text)}</p></div>
-      <div class="costat org"><span class="qui">Mentrestant, qui ho organitza</span><h3>${esc(p.org.titol)}</h3><p>${esc(p.org.text)}</p></div>
-    </div>
-    ${p.vot ? `<div class="vot-escena"><p class="pregunta">${esc(p.vot.pregunta)}</p>${votOResultat(i, { real: p.vot.real })}${sala.revelats.has(i) ? `<p class="revela">${esc(p.vot.realText)}</p>${p.vot.frases ? `<div class="consells">${p.vot.frases.map(f => `<div class="entra">${esc(f)}</div>`).join('')}</div>` : ''}` : ''}</div>` : ''}`,
-  comparativa: p => `<h1 class="titol-gran">${esc(p.titol)}</h1>${classeVsPol()}
-    <table class="taula"><thead><tr><th></th><th class="p">El Pol</th><th class="o">Qui ho organitza</th></tr></thead>
-    <tbody>${p.files.map(f => `<tr class="entra"><td>${esc(f[0])}</td><td>${esc(f[1])}</td><td>${esc(f[2])}</td></tr>`).join('')}</tbody></table>`,
-  cartell: (p, i) => `<h2 class="titol-mig">${esc(p.titol)}</h2>
-    <div class="cartell-grid">
-      ${p.reel ? `<div class="reel">${incrusta(p.reel)}<div class="acc"><a href="${esc(p.reel)}" target="_blank" rel="noopener">Obrir l'original ↗</a></div></div>` : `<div class="cartell" aria-label="Cartell d'exemple inventat"><span class="etiq">EXEMPLE INVENTAT</span>
-        <div class="t"><span>BLOQUE</span><br><span>JEM-HO</span><br><span>TOOT</span></div>
-        <div class="baix"><span class="s">24·10 · 18H<br>TOTS UNITS 🔥</span><span class="qrfals"></span></div></div>`}
-      <div id="cartell-dreta" style="display:flex;flex-direction:column;gap:16px">${cartellDreta(p, i)}</div>
-    </div>`,
-  hipotesis: (p, i) => `<h2 class="titol-mig">${esc(p.titol)}</h2><p class="lede">${esc(p.intro)}</p>
-    <div class="cartes">${p.cartes.map(c => `<div class="carta"><h3>${esc(c.nom)}</h3><p>${esc(c.text)}</p><p class="sap"><b>Se sap:</b> ${esc(c.sap)}</p><p class="nosap"><b>No se sap:</b> ${esc(c.nosap)}</p></div>`).join('')}</div>
-    <p class="pregunta" style="font-size:clamp(22px,2.2vw,30px)">${esc(p.pregunta)}</p>
-    ${sala.revelats.has(i) ? barres(i) + `<p class="revela">${esc(p.tancament)}</p>` + (p.culpables ? `<h3 style="font-size:clamp(24px,2.4vw,34px)">Compte amb els culpables fàcils</h3><p class="lede">${esc(p.culpables.text)}</p><div class="tres">${p.culpables.preguntes.map(q => `<div class="entra">${esc(q)}</div>`).join('')}</div>` : '') + `<p class="font">Fonts: ${esc(p.font)}</p>` : opsHTML(p.opcions, 'trucs')}`,
-  culpables: p => `<h2 class="titol-mig">${esc(p.titol)}</h2><p class="lede">${esc(p.text)}</p>
-    <div class="tres">${p.preguntes.map(q => `<div class="entra">${esc(q)}</div>`).join('')}</div><p class="frase">${esc(p.frase)}</p>`,
-  'intro-missatges': p => `<h1 class="titol-gran">${esc(p.titol)}</h1><p class="lede">${esc(p.text)}</p>${opsHTML(C.trucs, 'trucs')}`,
-  missatge: (p, i) => `<div class="bombolla entra"><small>Canal · reenviat · missatge inventat</small>${esc(p.text)}</div>
-    <p class="pregunta" style="font-size:clamp(22px,2.2vw,30px)">Quin truc fa servir?</p>
-    ${votOResultat(i, { bona: p.correcta, cls: 'trucs' })}
-    ${sala.revelats.has(i) ? `<p class="revela ok">${esc(p.explicacio)}</p>` : ''}`,
-  mateixos: p => `<h1 class="titol-gran">${esc(p.titol)}</h1><p class="lede" style="color:var(--tinta)">${esc(p.text)}</p>`,
-  final: p => `<h1 class="titol-gran" style="max-width:20ch">${esc(p.titol)}</h1>${p.trucs ? `<p class="lede">${esc(p.trucs)}</p>` : ''}<span class="seccio">Si et passa a tu</span><div class="consells">${p.consells.map(c => `<div class="entra">${esc(c)}</div>`).join('')}</div>`,
-  fonts: p => `<h2 class="titol-mig">${esc(p.titol)}</h2><div class="fonts">${p.fonts.map(f => `<a href="${esc(f[2])}" target="_blank" rel="noopener"><b>${esc(f[0])}</b>${esc(f[1])}</a>`).join('')}</div>`,
-};
-
-function pinta() {
-  const i = sala.i, p = P[i];
-  $('#seccio').textContent = p.seccio || 'Tutoria';
-  $('#punts').innerHTML = P.map((_, k) => `<i class="${k < i ? 'fet' : k === i ? 'ara' : ''}"></i>`).join('');
-  if (p.tipus === 'cartell' && pinta.darrer === i && $('#cartell-dreta')) $('#cartell-dreta').innerHTML = cartellDreta(p, i);   // el carrusel no es recarrega
-  else $('#escenari').innerHTML = RENDER[p.tipus](p, i) + (p.debat ? `<div class="panell-debat" id="panell-debat" hidden><span class="seccio">💬 Per debatre</span>${p.debat.map(q => `<p>${esc(q)}</p>`).join('')}</div>` : '');
-  pinta.darrer = i;
-  $('#b-debat').hidden = !p.debat;
-  if (p.tipus === 'portada') { const q = $('#qr'); if (window.QRCode && q) new QRCode(q, { text: `${MOVIL_URL}?c=${sala.codi}`, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M }); }
-  requestAnimationFrame(() => requestAnimationFrame(() => document.querySelectorAll('i[data-w]').forEach(e => e.style.width = e.dataset.w + '%')));
-  const pendent = votable(p) && !sala.revelats.has(i);
-  $('#b-seguent').innerHTML = (pendent ? 'Revelar' : i === P.length - 1 ? 'Final' : p.tipus === 'portada' ? 'Començar' : 'Següent') + '<span class="tecla">Espai</span>';
-  $('#b-seguent').disabled = !pendent && i === P.length - 1;
-  $('#b-enrere').disabled = i === 0;
-  xips(); difondre(true);
-}
-function endavant() {
-  const i = sala.i, p = P[i];
-  if (votable(p) && !sala.revelats.has(i)) { sala.revelats.add(i); return pinta(); }
-  if (i < P.length - 1) { sala.i++; pinta(); window.scrollTo(0, 0); }
-}
-function enrere() { if (sala.i > 0) { sala.i--; pinta(); } }
-$('#b-seguent').onclick = endavant;
-function debat() { const d = $('#panell-debat'); if (!d) return; d.hidden = !d.hidden; if (!d.hidden) d.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
-$('#b-debat').onclick = debat;
-$('#b-enrere').onclick = enrere;
-document.addEventListener('keydown', e => {
-  if (e.target.closest?.('input,button')) return;
-  if (e.code === 'Space' || e.key === 'ArrowRight') { e.preventDefault(); endavant(); }
-  if (e.key === 'ArrowLeft') enrere();
-  if (e.key === 'd' || e.key === 'D') debat();
-});
-
-/* ---------- reels: Instagram, TikTok o YouTube, enganxant l'enllaç ---------- */
-/* cada pantalla de reels té els seus fixos (contingut.json) i els que hi afegeixis, guardats en aquest navegador */
-const clau = i => 'qui-dona-la-cara-reels-' + i;
-const propis = i => { try { return JSON.parse(localStorage.getItem(clau(i)) || '[]'); } catch { return []; } };
-const desaPropis = (i, l) => { try { localStorage.setItem(clau(i), JSON.stringify(l)); } catch {} };
-function incrusta(u) {
-  let m;
-  if ((m = u.match(/instagram\.com\/(?:[\w.]+\/)?(reels?|p|tv)\/([\w-]+)/))) return `<iframe src="https://www.instagram.com/${m[1] === 'p' ? 'p' : 'reel'}/${m[2]}/embed" allowfullscreen loading="lazy" title="Vídeo d'Instagram"></iframe>`;
-  if ((m = u.match(/tiktok\.com\/.*\/video\/(\d+)/))) return `<iframe src="https://www.tiktok.com/embed/v2/${m[1]}" allowfullscreen loading="lazy" title="Vídeo de TikTok"></iframe>`;
-  if ((m = u.match(/(?:youtu\.be\/|youtube\.com\/(?:shorts\/|watch\?v=|embed\/))([\w-]{11})/))) return `<iframe src="https://www.youtube-nocookie.com/embed/${m[1]}" allowfullscreen loading="lazy" title="Vídeo de YouTube" allow="autoplay; encrypted-media; picture-in-picture"></iframe>`;
-  return `<div class="buit" style="aspect-ratio:9/16;display:grid;place-items:center">Aquest enllaç no es pot incrustar.<br>Obre'l amb el botó de sota.</div>`;
-}
-$('#escenari').addEventListener('submit', e => {
-  if (e.target.id !== 'f-reel') return;
-  e.preventDefault();
-  const u = $('#i-reel').value.trim(); if (!/^https?:\/\//.test(u)) return toast('Enganxa un enllaç que comenci per https://');
-  desaPropis(sala.i, [...propis(sala.i), u]); pinta(); toast('Reel afegit. Es queda guardat en aquest navegador.');
-});
-$('#escenari').addEventListener('click', e => {
-  const b = e.target.closest('[data-treu]'); if (!b) return;
-  const l = propis(sala.i); l.splice(+b.dataset.treu, 1); desaPropis(sala.i, l); pinta();
-});
-
-/* ---------- demo ---------- */
-if (DEMO) {
-  $('#demo').hidden = false;
-  setInterval(() => {
-    const i = sala.i, p = P[i];
-    if (!votable(p) || sala.revelats.has(i)) return;
-    const v = votsDe(i), n = opcionsDe(p).length;
-    if (v.size >= 24) return;
-    const pref = p.tipus === 'missatge' ? p.correcta : p.tipus === 'escena' ? p.vot.real : 0;
-    v.set('a' + v.size, Math.random() < .55 ? pref : Math.floor(Math.random() * n));
-    xips();
-  }, 220);
-}
-pinta();
-</script>
+<main>
+  <span class="seccio">Tutoria · Blocus</span>
+  <h1>Qui dona<br><span>la cara?</span></h1>
+  <div class="botons">
+    <a class="boto alumne" href="movil.html"><span class="ic">📱</span>Sóc alumne/a<small>Entra amb el codi de la pantalla</small></a>
+    <a class="boto profe" href="profe.html"><span class="ic">🧑‍🏫</span>Sóc el profe<small>Obre la sala i projecta-la</small></a>
+  </div>
+  <p class="nota">Anònim: ningú no sabrà què votes. No cal registrar-se.</p>
+</main>
 </body>
 </html>

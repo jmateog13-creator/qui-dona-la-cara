@@ -92,11 +92,13 @@
       "hora": "Dimarts · 21:40",
       "pol": {
         "titol": "Un vídeo més",
-        "text": "El Pol fa scroll al llit. Li surt un vídeo amb música èpica: «França ho ha fet. Ara ens toca a nosaltres 🔥». Al final, un cartell amb un codi QR."
+        "text": "El Pol fa scroll al llit. Li surt un vídeo amb música èpica: «França ho ha fet. Ara ens toca a nosaltres 🔥». Al final, un cartell amb un codi QR.",
+        "img": "img/1-pol-video.jpg"
       },
       "org": {
         "titol": "30 segons",
-        "text": "A casa, amb el portàtil. Demana un cartell a una IA, l'enganxa en un vídeo i el penja des d'un compte acabat d'obrir. Cap nom real."
+        "text": "A casa, amb el portàtil. Demana un cartell a una IA, l'enganxa en un vídeo i el penja des d'un compte acabat d'obrir. Cap nom real.",
+        "img": "img/1-org-cartell.jpg"
       },
       "vot": {
         "pregunta": "Què faries tu, si fossis el Pol?",
@@ -118,11 +120,13 @@
       "hora": "Dimecres i dijous",
       "pol": {
         "titol": "2.000 persones",
-        "text": "El QR el porta a un canal de Telegram amb més de 2.000 persones: «Tots units», «Passa-ho a amics d'amics». El Pol se sent part d'una cosa gran. L'endemà la plataforma el tanca… i cinc minuts després li arriba l'enllaç d'un de nou."
+        "text": "El QR el porta a un canal de Telegram amb més de 2.000 persones: «Tots units», «Passa-ho a amics d'amics». El Pol se sent part d'una cosa gran. L'endemà la plataforma el tanca… i cinc minuts després li arriba l'enllaç d'un de nou.",
+        "img": "img/2-pol-canal.jpg"
       },
       "org": {
         "titol": "No li costa res",
-        "text": "Mira com creix el comptador: com més gent, més creïble sembla. Quan li tanquen el canal, n'obre un altre en dos minuts."
+        "text": "Mira com creix el comptador: com més gent, més creïble sembla. Quan li tanquen el canal, n'obre un altre en dos minuts.",
+        "img": "img/2-org-canal-nou.jpg"
       }
     },
     {
@@ -131,7 +135,8 @@
       "hora": "Divendres · 12:10",
       "pol": {
         "titol": "«Vens o què?»",
-        "text": "Al canal: «Divendres a les 18 h. Roba negra i màscara. No voleu tornar a casa amb iPhones?». I al grup d'amics del Pol: «Vens divendres o què?», «No siguis rajat 😂»."
+        "text": "Al canal: «Divendres a les 18 h. Roba negra i màscara. No voleu tornar a casa amb iPhones?». I al grup d'amics del Pol: «Vens divendres o què?», «No siguis rajat 😂».",
+        "img": "img/3-pol-amics.jpg"
       },
       "org": {
         "titol": "Ja ho fan ells",
@@ -165,11 +170,13 @@
       "hora": "Divendres · 18:40",
       "pol": {
         "titol": "Al carrer",
-        "text": "Fum, crits, un aparador trencat. Algú surt d'una botiga amb una caixa. El Pol porta la màscara i grava amb el mòbil. Arriben els antiavalots."
+        "text": "Fum, crits, un aparador trencat. Algú surt d'una botiga amb una caixa. El Pol porta la màscara i grava amb el mòbil. Arriben els antiavalots.",
+        "img": "img/4-pol-carrer.jpg"
       },
       "org": {
         "titol": "Publicitat gratis",
-        "text": "Des de casa, mira els vídeos que penja la gent: són la seva publicitat, i no li costen res. Després esborra els missatges i obre un canal nou."
+        "text": "Des de casa, mira els vídeos que penja la gent: són la seva publicitat, i no li costen res. Després esborra els missatges i obre un canal nou.",
+        "img": "img/4-org-sofa.jpg"
       },
       "vot": {
         "pregunta": "Què faries tu?",
@@ -191,7 +198,8 @@
       "hora": "Les setmanes següents",
       "pol": {
         "titol": "Les conseqüències",
-        "text": "Com que és menor, el seu cas va a la Fiscalia de Menors. Pot haver de fer tasques per a la comunitat o estar en llibertat vigilada. I els seus pares poden haver de pagar els danys."
+        "text": "Com que és menor, el seu cas va a la Fiscalia de Menors. Pot haver de fer tasques per a la comunitat o estar en llibertat vigilada. I els seus pares poden haver de pagar els danys.",
+        "img": "img/5-pol-consequencies.jpg"
       },
       "org": {
         "titol": "Anònim",
@@ -357,7 +365,8 @@
       ],
       "debat": [
         "Quina d'aquestes quatre idees us serviria de veritat?"
-      ]
+      ],
+      "img": "img/6-final-cami.jpg"
     },
     {
       "tipus": "fonts",

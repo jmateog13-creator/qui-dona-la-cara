@@ -118,7 +118,7 @@ function pinta(s) {
     ver('#p-votar'); return pintaEstat();
   }
   if (s.fase === 'tancat') { const k = meus[s.r]; return info('<div class="icona">📊</div>', 'Mira la pantalla', k != null ? `Has triat: ${LL[k]} · ${s.opcions[k]}` : 'Aquesta vegada no has votat.'); }
-  return info(s.text ? '' : '<div class="icona">📺</div>', s.titol || 'Mira la pantalla', s.text || '');
+  return info(s.img ? `<img src="${esc(s.img)}" alt="" style="width:100%;max-width:520px;border-radius:14px;aspect-ratio:16/9;object-fit:cover">` : s.text ? '' : '<div class="icona">📺</div>', s.titol || 'Mira la pantalla', s.text || '');
 }
 function pintaEstat() {
   if (!estat || estat.fase !== 'vot') return;

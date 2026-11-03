@@ -4,15 +4,20 @@ Activitat de tutoria sobre **Blocus** (octubre de 2026): perfils de TikTok i can
 
 ## Enllaços
 
+**Un sol enllaç per a tothom:** https://jmateog13-creator.github.io/qui-dona-la-cara/
+
+En entrar surten dos botons: **«Sóc alumne/a»** i **«Sóc el profe»**.
+
+Enllaços directes, per exemple per al Moodle (canvia `1234` pel mateix número de 4 xifres als dos):
+
 | Qui | Enllaç |
 |---|---|
-| **Profe** (ordinador de classe, projectat) | https://jmateog13-creator.github.io/qui-dona-la-cara/?codi=1234 |
-| **Alumnes** (mòbil o Moodle) | https://jmateog13-creator.github.io/qui-dona-la-cara/alumne/?c=1234 |
+| **Profe** | https://jmateog13-creator.github.io/qui-dona-la-cara/?codi=1234 |
+| **Alumnes** | https://jmateog13-creator.github.io/qui-dona-la-cara/?c=1234 |
 
-Canvia `1234` per qualsevol número de 4 xifres, el mateix als dos enllaços. Sense `?codi=`, la sala tria un codi a l'atzar i surt a la pantalla, amb el QR.
-
-- **Previsualitzar sense alumnes:** `?demo` (simula 24 alumnes)
+- **Previsualitzar sense alumnes:** `?demo`
 - **Tecles:** **Espai** o **→** avança (i revela els vots), **←** torna enrere, **D** obre «Per debatre»
+- **Fitxers:** `index.html` (entrada), `profe.html` (pantalla gran), `movil.html` (alumnes), `img/` (il·lustracions)
 
 ## Estructura (30-35 minuts)
 
