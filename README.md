@@ -24,7 +24,7 @@ Enllaços directes, per exemple per al Moodle (canvia `1234` pel mateix número 
 L'objectiu és que en surtin amb **tres idees clares** (última pantalla):
 1. Qui organitza fa servir la teva cara, els teus vídeos i els teus amics: la feina la fas tu.
 2. Tothom s'hi juga alguna cosa, però no igual: al carrer t'enxampen aquell mateix dia; a qui organitza, només si una investigació el troba (alguns ja hi han caigut).
-3. Els disturbis no ajuden cap causa: fan que qualsevol protesta sembli violència.
+3. Manifestar-se i organitzar-se per defensar els teus drets és legítim. El vandalisme i el saqueig no ho són, i fan que ningú no t'escolti.
 
 | Bloc | Pantalles | Temps |
 |---|---|---|
@@ -32,7 +32,7 @@ L'objectiu és que en surtin amb **tres idees clares** (última pantalla):
 | **Què va passar** | Reel «Què és Blocus», endevinar quants detinguts eren menors i les dades | 5 min |
 | **La història del Pol** | 5 escenes amb pantalla partida i il·lustracions, 3 votacions «què faries tu?» (inclosa la del grup d'amics), i conseqüències reals també per als qui ho organitzen | 11 min |
 | **Els cartells** | Els cartells reals (Newtral): quants seguidors tenia qui els va difondre? (uns cent) i com reconèixer la IA | 3 min |
-| **Qui hi guanya? / Qui hi perd?** | Quatre hipòtesis amb el mateix pes i els culpables fàcils. Després, «Qui hi perd?»: tothom menys qui ho organitza, i sobretot qualsevol protesta pacífica, que passa a semblar violència | 6 min |
+| **Qui hi guanya? / Qui hi perd?** | Quatre hipòtesis amb el mateix pes i els culpables fàcils. Després, «Qui hi perd?»: tothom menys qui ho organitza, i sobretot qualsevol protesta pacífica, que passa a semblar violència. I «Protestar no és saquejar»: el que és legítim i el que no | 7 min |
 | **Desmunta el missatge** | 2 missatges inventats: pressa i enemic comú | 2 min |
 | **Per acabar** | «Què t'emportes?» (vot anònim: et diu què els ha quedat) i les tres idees | 3 min |
 

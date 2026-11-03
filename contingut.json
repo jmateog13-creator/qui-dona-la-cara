@@ -337,6 +337,33 @@
       ]
     },
     {
+      "tipus": "contrast",
+      "seccio": "Qui hi perd?",
+      "titol": "Protestar no és saquejar",
+      "si": {
+        "titol": "És legítim",
+        "items": [
+          "Manifestar-se",
+          "Lluitar pels teus drets",
+          "Organitzar-se amb altra gent",
+          "Fer vaga, signar, fer soroll"
+        ]
+      },
+      "no": {
+        "titol": "No ho és",
+        "items": [
+          "Trencar aparadors",
+          "Saquejar botigues",
+          "Fer mal a persones",
+          "Cremar el que és de tothom"
+        ]
+      },
+      "frase": "Protestar és un dret, i organitzar-se, també. El vandalisme i el saqueig no ho són. I a més fan que ningú no t'escolti.",
+      "debat": [
+        "Per què creieu que una protesta pacífica pot aconseguir més coses que un aldarull?"
+      ]
+    },
+    {
       "tipus": "missatge",
       "seccio": "Desmunta el missatge",
       "text": "Divendres o mai. Si no ho fem ara, no ho farem.",
@@ -358,7 +385,7 @@
       "opcions": [
         "Qui organitza fa servir la teva cara i els teus vídeos",
         "Al carrer t'enxampen el mateix dia; a qui organitza, potser mai",
-        "Els disturbis fan que qualsevol protesta sembli violència",
+        "Protestar és un dret; saquejar, no",
         "Res de nou"
       ]
     },
@@ -380,7 +407,7 @@
       "idees": [
         "Qui organitza fa servir la teva cara, els teus vídeos i els teus amics: la feina la fas tu.",
         "Tothom s'hi juga alguna cosa, però no igual: al carrer t'enxampen aquell mateix dia; a qui organitza, només si una investigació el troba.",
-        "Els disturbis no ajuden cap causa: fan que qualsevol protesta sembli violència."
+        "Manifestar-se i organitzar-se per defensar els teus drets és legítim. El vandalisme i el saqueig no ho són, i fan que ningú no t'escolti."
       ]
     },
     {
