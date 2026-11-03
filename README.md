@@ -23,7 +23,7 @@ Enllaços directes, per exemple per al Moodle (canvia `1234` pel mateix número 
 
 L'objectiu és que en surtin amb **tres idees clares** (última pantalla):
 1. Qui organitza fa servir la teva cara, els teus vídeos i els teus amics: la feina la fas tu.
-2. Reenviar, gravar o administrar un grup també té conseqüències. Ja hi ha joves de 14 a 20 anys detinguts per organitzar-ho.
+2. Tothom s'hi juga alguna cosa, però no igual: al carrer t'enxampen aquell mateix dia; a qui organitza, només si una investigació el troba (alguns ja hi han caigut).
 3. Els disturbis no ajuden cap causa: fan que qualsevol protesta sembli violència.
 
 | Bloc | Pantalles | Temps |

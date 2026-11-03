@@ -202,8 +202,8 @@
         "img": "img/5-pol-consequencies.jpg"
       },
       "org": {
-        "titol": "També els busquen",
-        "text": "La policia va a buscar qui ho organitza. Ja hi ha joves detinguts per crear i administrar els canals: dues noies de 14 i 17 anys a Barcelona, un noi de 17 anys a València (internat en un centre de menors) i el presumpte fundador de Blocus a Picanya, que ha passat a disposició judicial."
+        "titol": "Només si el troben",
+        "text": "A qui ho organitza no el detenen aquell dia: cal una investigació de setmanes per arribar-hi. Alguns ja hi han caigut: dues noies de 14 i 17 anys a Barcelona, un noi de 17 anys a València (internat en un centre de menors) i el presumpte fundador de Blocus a Picanya, que ha passat a disposició judicial."
       },
       "debat": [
         "Qui acaba pagant, al final? Pensa en els pares i en els botiguers."
@@ -216,7 +216,7 @@
       "files": [
         [
           "On era el divendres a les 18 h?",
-          "Al carrer",
+          "Al carrer, a primera línia",
           "A casa"
         ],
         [
@@ -225,14 +225,14 @@
           "Ningú: ja la feien els altres"
         ],
         [
-          "Qui hi posava la cara aquell dia?",
-          "El Pol",
-          "Ningú"
+          "Qui és més fàcil d'enxampar?",
+          "Ell: càmeres, testimonis i el mòbil ple de vídeos",
+          "Cal una investigació de setmanes"
         ],
         [
-          "I després?",
-          "Expedient, llibertat vigilada i els pares pagant",
-          "Molts ja estan detinguts, i alguns són menors"
+          "Quan arriben les conseqüències?",
+          "Aquell mateix dia",
+          "Només si el troben. Alguns ja hi han caigut"
         ]
       ],
       "debat": [
@@ -356,8 +356,8 @@
       "titol": "Què t'emportes?",
       "pregunta": "De tot això, quina idea t'emportes?",
       "opcions": [
-        "Qui organitza fa servir la teva cara, els teus vídeos i els teus amics",
-        "Reenviar, gravar o administrar un grup també té conseqüències",
+        "Qui organitza fa servir la teva cara i els teus vídeos",
+        "Al carrer t'enxampen el mateix dia; a qui organitza, potser mai",
         "Els disturbis fan que qualsevol protesta sembli violència",
         "Res de nou"
       ]
@@ -379,7 +379,7 @@
       "img": "img/6-final-cami.jpg",
       "idees": [
         "Qui organitza fa servir la teva cara, els teus vídeos i els teus amics: la feina la fas tu.",
-        "Reenviar, gravar o administrar un grup també té conseqüències. Ja hi ha joves de 14 a 20 anys detinguts per organitzar-ho.",
+        "Tothom s'hi juga alguna cosa, però no igual: al carrer t'enxampen aquell mateix dia; a qui organitza, només si una investigació el troba.",
         "Els disturbis no ajuden cap causa: fan que qualsevol protesta sembli violència."
       ]
     },
