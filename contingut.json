@@ -98,7 +98,8 @@
       "org": {
         "titol": "30 segons",
         "text": "A casa, amb el portàtil. Demana un cartell a una IA, l'enganxa en un vídeo i el penja des d'un compte acabat d'obrir. Cap nom real.",
-        "img": "img/1-org-cartell.jpg"
+        "img": "img/1-org-cartell.jpg",
+        "comptador": "98 seguidors"
       },
       "vot": {
         "pregunta": "Què faries tu, si fossis el Pol?",
@@ -126,7 +127,8 @@
       "org": {
         "titol": "No li costa res",
         "text": "Mira com creix el comptador: com més gent, més creïble sembla. Quan li tanquen el canal, n'obre un altre en dos minuts.",
-        "img": "img/2-org-canal-nou.jpg"
+        "img": "img/2-org-canal-nou.jpg",
+        "comptador": "2.000 al canal"
       }
     },
     {
@@ -140,7 +142,8 @@
       },
       "org": {
         "titol": "Ja ho fan ells",
-        "text": "No coneix el Pol ni els seus amics. No li cal: la pressió del grup la fan ells, gratis."
+        "text": "No coneix el Pol ni els seus amics. No li cal: la pressió del grup la fan ells, gratis.",
+        "comptador": "5.000 al canal"
       },
       "vot": {
         "pregunta": "Què contestaries tu al grup?",
@@ -174,7 +177,8 @@
       "org": {
         "titol": "Publicitat gratis",
         "text": "Des de casa, mira els vídeos que penja la gent: són la seva publicitat, i no li costen res. Després esborra els missatges i obre un canal nou.",
-        "img": "img/4-org-sofa.jpg"
+        "img": "img/4-org-sofa.jpg",
+        "comptador": "surt a les notícies 📺"
       },
       "vot": {
         "pregunta": "Què faries tu?",
@@ -200,8 +204,10 @@
         "img": "img/5-pol-consequencies.jpg"
       },
       "org": {
-        "titol": "També hi han caigut",
-        "text": "Aquell dia no els detenen, però també els busquen. En una setmana en van trobar uns quants, i sorpresa: alguns dels presumptes organitzadors tenien 14, 17 i 17 anys. El presumpte fundador de Blocus, detingut a Picanya, ha passat a disposició judicial."
+        "titol": "Divendres a la nit… i una setmana després",
+        "comptador": "canal nou",
+        "text": "Divendres a la nit, al sofà, obre un canal nou: «Això només és el començament».",
+        "gir": "Però Blocus surt a totes les notícies, hi ha investigació i, una setmana després, li truquen a la porta. Com ell, n'han detingut d'altres, alguns de 14 i 17 anys. I molts canals semblants segueixen oberts: com que no s'han fet famosos, ningú no els investiga."
       },
       "debat": [
         "Qui acaba pagant, al final? Pensa en els pares i en els botiguers."
@@ -223,19 +229,19 @@
           "Ningú: ja la feien els altres"
         ],
         [
-          "Qui és més fàcil d'enxampar?",
-          "Ell, aquell mateix dia",
-          "Costa més… però en una setmana els van trobar"
+          "Quan cau?",
+          "Segur, i aquell mateix dia",
+          "Només si hi ha investigació"
         ],
         [
-          "Al final, qui hi ha caigut?",
-          "Els dos",
-          "Els dos"
+          "I quan hi ha investigació?",
+          "No cal: ja l'han enxampat",
+          "Quan el tema es fa famós, com Blocus. Si no, molts grups segueixen oberts"
         ]
       ],
       "debat": [
         "Qui ha treballat per a qui?",
-        "I si qui ho organitza fos algú del vostre institut buscant seguidors?"
+        "Per què creieu que molts grups semblants segueixen oberts?"
       ]
     },
     {
@@ -397,7 +403,7 @@
       "pregunta": "De tot això, quina idea t'emportes?",
       "opcions": [
         "Qui organitza fa servir la teva cara i els teus vídeos",
-        "Al carrer t'enxampen el mateix dia; qui organitza també cau",
+        "Al carrer caus segur; qui organitza, només si hi ha investigació",
         "Protestar és un dret; saquejar, no",
         "Res de nou"
       ]
@@ -419,7 +425,7 @@
       "img": "img/6-final-cami.jpg",
       "idees": [
         "Qui organitza fa servir la teva cara, els teus vídeos i els teus amics: la feina la fas tu.",
-        "Tothom s'hi juga alguna cosa: al carrer t'enxampen aquell mateix dia, i qui ho organitza també cau, encara que trigui més.",
+        "Al carrer caus segur, i el primer dia. Qui organitza només cau si hi ha investigació, i això passa quan el tema es fa famós, com Blocus.",
         "Manifestar-se i organitzar-se per defensar els teus drets és legítim. El vandalisme i el saqueig no ho són."
       ]
     },
@@ -478,5 +484,6 @@
     "Promesa de premi",
     "Anonimat",
     "«Passa-ho»"
-  ]
+  ],
+  "admin": "l'admin · @nitcalenta_bcn"
 }

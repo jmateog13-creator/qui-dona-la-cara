@@ -23,14 +23,14 @@ Enllaços directes, per exemple per al Moodle (canvia `1234` pel mateix número 
 
 L'objectiu és que en surtin amb **tres idees clares** (última pantalla):
 1. Qui organitza fa servir la teva cara, els teus vídeos i els teus amics: la feina la fas tu.
-2. Tothom s'hi juga alguna cosa: al carrer t'enxampen aquell mateix dia, i qui ho organitza també cau, encara que trigui més (els presumptes organitzadors detinguts tenien 14, 17 i 17 anys).
+2. Al carrer caus segur, i el primer dia. Qui organitza només cau si hi ha investigació, i això passa quan el tema es fa famós, com Blocus. Molts grups semblants segueixen oberts.
 3. Manifestar-se i organitzar-se per defensar els teus drets és legítim. El vandalisme i el saqueig no ho són.
 
 | Bloc | Pantalles | Temps |
 |---|---|---|
 | **Abans de res** | 2 preguntes anònimes | 3 min |
 | **Què va passar** | Reel «Què és Blocus», endevinar quants detinguts eren menors i les dades | 5 min |
-| **La història del Pol** | 5 escenes amb pantalla partida i il·lustracions, 3 votacions «què faries tu?» (inclosa la del grup d'amics); conseqüències creïbles per al Pol i el gir: els organitzadors també cauen, i alguns eren menors | 11 min |
+| **La història del Pol** | 5 escenes amb pantalla partida i il·lustracions, 3 votacions «què faries tu?» (inclosa la del grup d'amics); l'organitzador és un personatge que se segueix escena a escena (l'admin · @nitcalenta_bcn) i, al final, el gir: cau només perquè Blocus es fa famós i hi ha investigació, mentre molts altres canals segueixen oberts | 11 min |
 | **Els cartells** | Els cartells reals (Newtral): quants seguidors tenia qui els va difondre? (uns cent) i com reconèixer la IA | 3 min |
 | **Qui hi guanya? / Qui hi perd?** | Quatre hipòtesis (efecte mirall, oportunisme, fer-se viral, ultradreta) i els culpables fàcils; «Qui hi perd?» | 5 min |
 | **Protestar no és saquejar** | Joc de zona grisa: 6 casos (manifestació, vaga, entrar al canal, gravar la policia, gravar el saqueig, pintada) que voten ✅ ⚠️ ❌ des del mòbil | 4 min |

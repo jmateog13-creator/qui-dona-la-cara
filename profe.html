@@ -193,6 +193,9 @@ a{color:var(--pol)}
 .zg-vots .bona{color:var(--tinta);background:var(--placa2);border-radius:6px;padding:0 6px}
 .zg-nota{font-size:clamp(15px,1.3vw,18px);color:var(--suau)}
 .zg-nota b{font-size:1.2em;margin-right:4px}
+.admin{align-self:flex-start;font:700 14px var(--mono);color:#cfd6ee;background:#7b96ff26;border:1px solid #7b96ff55;border-radius:99px;padding:3px 12px}
+.admin b{color:var(--org)}
+.gir-org{border-left:5px solid var(--pol);background:#f5d90a14;border-radius:10px;padding:12px 14px;color:var(--tinta);font-weight:700}
 .panell-debat{border:2px dashed var(--org);border-radius:16px;padding:16px 22px;background:#15171f;display:flex;flex-direction:column;gap:10px}
 .panell-debat .seccio{color:var(--org)}
 .panell-debat p{font:800 clamp(22px,2.3vw,32px)/1.25 var(--display);color:#dfe5fb}
@@ -346,7 +349,7 @@ const RENDER = {
   escena: (p, i) => `<span class="hora">${esc(p.hora)}</span>
     <div class="partida entra">
       <div class="costat pol">${p.pol.img ? `<img class="il" src="${esc(p.pol.img)}" alt="">` : ''}<span class="qui">El Pol</span><h3>${esc(p.pol.titol)}</h3><p>${esc(p.pol.text)}</p></div>
-      <div class="costat org">${p.org.img ? `<img class="il" src="${esc(p.org.img)}" alt="">` : ''}<span class="qui">Mentrestant, qui ho organitza</span><h3>${esc(p.org.titol)}</h3><p>${esc(p.org.text)}</p></div>
+      <div class="costat org">${p.org.img ? `<img class="il" src="${esc(p.org.img)}" alt="">` : ''}<span class="qui">Mentrestant, qui ho organitza</span>${C.admin ? `<span class="admin">${esc(C.admin)}${p.org.comptador ? ` · <b>${esc(p.org.comptador)}</b>` : ''}</span>` : ''}<h3>${esc(p.org.titol)}</h3><p>${esc(p.org.text)}</p>${p.org.gir ? `<p class="gir-org entra">${esc(p.org.gir)}</p>` : ''}</div>
     </div>
     ${p.vot ? `<div class="vot-escena"><p class="pregunta">${esc(p.vot.pregunta)}</p>${votOResultat(i, { real: p.vot.real })}${sala.revelats.has(i) ? `<p class="revela">${esc(p.vot.realText)}</p>${p.vot.frases ? `<div class="consells">${p.vot.frases.map(f => `<div class="entra">${esc(f)}</div>`).join('')}</div>` : ''}` : ''}</div>` : ''}`,
   comparativa: p => `<h1 class="titol-gran">${esc(p.titol)}</h1>
