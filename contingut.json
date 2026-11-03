@@ -28,6 +28,9 @@
         "Per endur-se coses",
         "Perquè hi anaven els amics",
         "No ho sé"
+      ],
+      "debat": [
+        "Algú vol explicar la seva opció? No cal dir què ha votat."
       ]
     },
     {
@@ -72,7 +75,10 @@
         }
       ],
       "frase": "La gran majoria no s'havia ficat mai en cap embolic.",
-      "font": "Fiscalia, recollit per Xataka (30 d'octubre de 2026)"
+      "font": "Fiscalia, recollit per Xataka (30 d'octubre de 2026)",
+      "debat": [
+        "Us sorprèn? Per què creieu que hi havia tants menors?"
+      ]
     },
     {
       "tipus": "intro-historia",
@@ -101,7 +107,10 @@
         ],
         "real": 0,
         "realText": "El Pol escaneja el QR. «Només per mirar què és.»"
-      }
+      },
+      "debat": [
+        "Per què «només per mirar» és tan fàcil de dir?"
+      ]
     },
     {
       "tipus": "escena",
@@ -144,7 +153,11 @@
           "«Si em pillen, a casa em maten. Passo.»",
           "Silenciar el grup un parell de dies: ningú no se n'adona"
         ]
-      }
+      },
+      "debat": [
+        "Què costa més: dir que no a un desconegut o als amics?",
+        "Quina d'aquestes frases faríeu servir de veritat?"
+      ]
     },
     {
       "tipus": "escena",
@@ -167,7 +180,10 @@
         ],
         "real": 1,
         "realText": "El Pol es queda gravant uns minuts més, i el detenen. La màscara no ha servit de res: als vídeos se'l veu a ell i als seus amics."
-      }
+      },
+      "debat": [
+        "Si no fas res dolent, per què et pots ficar en un problema igualment?"
+      ]
     },
     {
       "tipus": "escena",
@@ -180,7 +196,10 @@
       "org": {
         "titol": "Anònim",
         "text": "Molts organitzadors no han estat identificats. Un dels principals instigadors, un jove de 20 anys, sí que ha estat detingut."
-      }
+      },
+      "debat": [
+        "Qui acaba pagant, al final? Pensa en els pares i en els botiguers."
+      ]
     },
     {
       "tipus": "comparativa",
@@ -207,6 +226,9 @@
           "Un expedient i els diners dels pares",
           "Molt menys"
         ]
+      ],
+      "debat": [
+        "Qui ha treballat per a qui?"
       ]
     },
     {
@@ -230,7 +252,10 @@
         "Un QR que porta a un xat anònim",
         "Lletres massa netes o amb algun error estrany (les IA ja escriuen bé, però no sempre)"
       ],
-      "font": "Xataka, 30 d'octubre de 2026"
+      "font": "Xataka, 30 d'octubre de 2026",
+      "debat": [
+        "Com sabríeu si un cartell que us arriba és d'un moviment real?"
+      ]
     },
     {
       "tipus": "hipotesis",
@@ -280,7 +305,10 @@
           "A qui li convé que ho cregui?"
         ]
       },
-      "font": "Xataka, Metrópoli Abierta i Infobae, octubre de 2026"
+      "font": "Xataka, Metrópoli Abierta i Infobae, octubre de 2026",
+      "debat": [
+        "Per què és tan temptador culpar algú encara que no hi hagi proves?"
+      ]
     },
     {
       "tipus": "missatge",
@@ -326,6 +354,9 @@
         "No gravis: el teu vídeo és publicitat gratis per a qui ho organitza",
         "Silencia el grup o surt-ne: no cal donar explicacions",
         "«Aquest cop passo» també és una resposta"
+      ],
+      "debat": [
+        "Quina d'aquestes quatre idees us serviria de veritat?"
       ]
     },
     {

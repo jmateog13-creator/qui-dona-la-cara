@@ -22,7 +22,7 @@ p{margin:0}
 .pantalla{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:16px;padding-block:16px 28px}
 .logo{font:900 clamp(42px,13vw,58px)/.95 var(--display);font-stretch:125%}
 .logo span{color:var(--pol)}
-.sub{color:var(--suau);max-width:32ch}
+.sub{color:var(--suau);max-width:36ch;font-size:18px}
 form{display:flex;flex-direction:column;gap:12px;width:min(340px,100%)}
 .entrada{width:100%;border:0;border-radius:14px;padding:14px;background:#fff;color:var(--fosc);text-align:center;font:900 40px var(--display);letter-spacing:.18em}
 .btn{border:0;border-radius:14px;padding:15px;font:900 20px var(--display);background:var(--pol);color:var(--fosc);box-shadow:0 5px 0 #0008}
@@ -118,7 +118,7 @@ function pinta(s) {
     ver('#p-votar'); return pintaEstat();
   }
   if (s.fase === 'tancat') { const k = meus[s.r]; return info('<div class="icona">📊</div>', 'Mira la pantalla', k != null ? `Has triat: ${LL[k]} · ${s.opcions[k]}` : 'Aquesta vegada no has votat.'); }
-  return info('<div class="icona">📺</div>', s.titol || 'Mira la pantalla');
+  return info(s.text ? '' : '<div class="icona">📺</div>', s.titol || 'Mira la pantalla', s.text || '');
 }
 function pintaEstat() {
   if (!estat || estat.fase !== 'vot') return;

@@ -2,22 +2,17 @@
 
 Activitat de tutoria sobre **Blocus** (octubre de 2026): perfils de TikTok i canals de Telegram que van reclutar joves per a disturbis i saquejos. L'objectiu no és renyar, sinó entendre el mecanisme: **qui hi posa la cara i qui hi guanya**.
 
-## Obrir
+## Enllaços
 
-- **Profe (pantalla gran):** `index.html`
-- **Alumnes:** `movil.html`, o escanejant el QR, amb el codi de 4 números. Anònim, sense registrar-se.
-- **Previsualitzar sense sala:** `index.html?demo` (simula 24 alumnes)
+| Qui | Enllaç |
+|---|---|
+| **Profe** (ordinador de classe, projectat) | https://jmateog13-creator.github.io/qui-dona-la-cara/?codi=1234 |
+| **Alumnes** (mòbil o Moodle) | https://jmateog13-creator.github.io/qui-dona-la-cara/alumne/?c=1234 |
 
-**Espai** o **→** avança (i revela els vots), **←** torna enrere.
+Canvia `1234` per qualsevol número de 4 xifres, el mateix als dos enllaços. Sense `?codi=`, la sala tria un codi a l'atzar i surt a la pantalla, amb el QR.
 
-### Enllaç fix per al Moodle
-
-Si obres la pantalla del profe amb un codi fix, la sala sempre té el mateix codi, i l'enllaç dels alumnes no canvia mai:
-
-- **Profe:** `index.html?codi=1234`
-- **Alumnes (al Moodle):** `movil.html?c=1234`. Entren directament, sense escriure res.
-
-Tria un número que no facin servir altres profes alhora.
+- **Previsualitzar sense alumnes:** `?demo` (simula 24 alumnes)
+- **Tecles:** **Espai** o **→** avança (i revela els vots), **←** torna enrere, **D** obre «Per debatre»
 
 ## Estructura (30-35 minuts)
 

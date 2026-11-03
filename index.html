@@ -168,6 +168,11 @@ a{color:var(--pol)}
 .fonts a{display:block;background:var(--placa);border-radius:10px;padding:12px 16px;text-decoration:none;color:var(--tinta)}
 .fonts a b{color:var(--pol);margin-right:8px}
 
+.panell-debat{border:2px dashed var(--org);border-radius:16px;padding:16px 22px;background:#15171f;display:flex;flex-direction:column;gap:10px}
+.panell-debat .seccio{color:var(--org)}
+.panell-debat p{font:800 clamp(22px,2.3vw,32px)/1.25 var(--display);color:#dfe5fb}
+.classe-pol{background:var(--placa);border-left:6px solid var(--org);border-radius:12px;padding:16px 20px;font:800 clamp(22px,2.2vw,32px)/1.25 var(--display)}
+.classe-pol small{display:block;font:400 clamp(16px,1.4vw,19px) var(--text);color:var(--suau);margin-top:6px}
 .toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:var(--tinta);color:var(--fosc);padding:10px 18px;border-radius:12px;font-weight:700;z-index:9}
 .demo{position:fixed;bottom:76px;left:10px;background:var(--pol);color:var(--fosc);font:700 12px var(--mono);padding:4px 10px;border-radius:8px;z-index:9}
 .entra{animation:entra .45s cubic-bezier(.2,.9,.3,1)}
@@ -185,6 +190,7 @@ a{color:var(--pol)}
 <main class="escenari" id="escenari"></main>
 <footer class="comandament">
   <button class="btn" id="b-enrere" type="button">← Enrere</button>
+  <button class="btn" id="b-debat" type="button" hidden>💬 Per debatre<span class="tecla">D</span></button>
   <button class="btn primari gran" id="b-seguent" type="button"></button>
 </footer>
 <div class="toast" id="toast" role="status" hidden></div>
@@ -201,7 +207,9 @@ const DEMO = new URLSearchParams(location.search).has('demo');
 const N = DEMO ? null : await import('./sala.js');
 const C = await fetch('contingut.json').then(r => r.json());
 const P = C.passos;
-const MOVIL_URL = location.origin + location.pathname.replace(/[^/]*$/, '') + 'movil.html';
+const BASE = location.origin + location.pathname.replace(/[^/]*$/, '');
+const MOVIL_URL = BASE + 'movil.html';
+const ALUMNE_URL = BASE + 'alumne/';   // enllaç curt per dictar o posar al Moodle
 const yo = DEMO ? 'demo-profe' : N.elMeuId();
 
 /* ---------- sala anònima: la pissarra compta, els mòbils només envien {k, r} ---------- */
@@ -233,7 +241,8 @@ function difondre(ara = false) {
   if (!ara) { if (!difT) difT = setTimeout(() => { difT = null; difondre(true); }, 200); return; }
   clearTimeout(difT); difT = null;
   const i = sala.i, p = P[i];
-  let s = { fase: 'info', titol: 'Mira la pantalla', seccio: p.seccio || '' };
+  let s = { fase: 'info', titol: 'Mira la pantalla', seccio: p.seccio || '', text: p.tipus === 'escena' ? p.pol.text : p.tipus === 'intro-historia' ? p.text : '' };
+  if (p.tipus === 'escena') s.titol = `El Pol · ${p.pol.titol}`;
   if (p.tipus === 'portada') s = { fase: 'espera' };
   else if (votable(p) && !sala.revelats.has(i)) s = { fase: 'vot', r: String(i), pregunta: p.tipus === 'escena' ? p.vot.pregunta : p.tipus === 'missatge' ? 'Quin truc fa servir?' : p.pregunta, opcions: opcionsDe(p), context: p.tipus === 'escena' ? p.pol.text : p.tipus === 'missatge' ? p.text : '', seccio: p.seccio };
   else if (votable(p)) s = { fase: 'tancat', r: String(i), opcions: opcionsDe(p), seccio: p.seccio };
@@ -262,6 +271,14 @@ const cartellDreta = (p, i) => `<p class="pregunta" style="font-size:clamp(24px,
   ${votOResultat(i, { bona: p.correcta ?? null })}
   ${sala.revelats.has(i) ? `<p class="revela">${esc(p.resposta)}</p><span class="seccio">Com reconèixer un cartell fet amb IA</span><ul class="senyals">${p.senyals.map(s => `<li>${esc(s)}</li>`).join('')}</ul><p class="font">Font: ${esc(p.font)}</p>` : ''}`;
 
+/* en quantes decisions la majoria de la classe hauria fet una altra cosa que el Pol */
+function classeVsPol() {
+  const dec = P.map((p, i) => [p, i]).filter(([p, i]) => p.tipus === 'escena' && p.vot && votsDe(i).size);
+  if (!dec.length) return '';
+  const diferents = dec.filter(([p, i]) => { const c = comptes(i), m = Math.max(...c); return c.indexOf(m) !== p.vot.real; }).length;
+  return `<p class="classe-pol entra">La classe contra el Pol: en ${diferents} de ${dec.length} ${dec.length === 1 ? 'decisió' : 'decisions'}, la majoria de vosaltres hauria fet una altra cosa.<small>${diferents ? 'I tot i així, el Pol no és tonto: és el que fa molta gent quan no té temps de pensar i els amics hi van.' : 'Igual que el Pol. Per això funciona: és el que faria molta gent.'}</small></p>`;
+}
+
 const RENDER = {
   portada: () => `<div class="portada entra">
       <div style="display:flex;flex-direction:column;gap:20px">
@@ -269,7 +286,7 @@ const RENDER = {
         <h1 class="marca">Qui dona<br><span>la cara?</span></h1>
         <p class="lede">Una activitat per entendre com funciona, sense sermons. Les respostes són anònimes.</p>
       </div>
-      <div class="sala"><span class="font">Entra des del mòbil a</span><b class="url">${esc(MOVIL_URL.replace(/^https?:\/\//, ''))}</b><span class="font">amb el codi</span><span class="codi">${sala.codi}</span><div class="qr" id="qr"></div></div>
+      <div class="sala"><span class="font">ALUMNES · entreu des del mòbil a</span><b class="url">${esc(ALUMNE_URL.replace(/^https?:\/\//, ''))}</b><span class="font">amb el codi</span><span class="codi">${sala.codi}</span><div class="qr" id="qr"></div></div>
     </div>`,
   pregunta: (p, i) => `<span class="seccio">${esc(p.titol)}</span><h2 class="pregunta">${esc(p.pregunta)}</h2>${votOResultat(i, { bona: p.correcta ?? null })}${sala.revelats.has(i) && p.resposta ? `<p class="revela ok">${esc(p.resposta)}</p>` : ''}`,
   reels: (p, i) => {
@@ -290,7 +307,7 @@ const RENDER = {
       <div class="costat org"><span class="qui">Mentrestant, qui ho organitza</span><h3>${esc(p.org.titol)}</h3><p>${esc(p.org.text)}</p></div>
     </div>
     ${p.vot ? `<div class="vot-escena"><p class="pregunta">${esc(p.vot.pregunta)}</p>${votOResultat(i, { real: p.vot.real })}${sala.revelats.has(i) ? `<p class="revela">${esc(p.vot.realText)}</p>${p.vot.frases ? `<div class="consells">${p.vot.frases.map(f => `<div class="entra">${esc(f)}</div>`).join('')}</div>` : ''}` : ''}</div>` : ''}`,
-  comparativa: p => `<h1 class="titol-gran">${esc(p.titol)}</h1>
+  comparativa: p => `<h1 class="titol-gran">${esc(p.titol)}</h1>${classeVsPol()}
     <table class="taula"><thead><tr><th></th><th class="p">El Pol</th><th class="o">Qui ho organitza</th></tr></thead>
     <tbody>${p.files.map(f => `<tr class="entra"><td>${esc(f[0])}</td><td>${esc(f[1])}</td><td>${esc(f[2])}</td></tr>`).join('')}</tbody></table>`,
   cartell: (p, i) => `<h2 class="titol-mig">${esc(p.titol)}</h2>
@@ -321,8 +338,9 @@ function pinta() {
   $('#seccio').textContent = p.seccio || 'Tutoria';
   $('#punts').innerHTML = P.map((_, k) => `<i class="${k < i ? 'fet' : k === i ? 'ara' : ''}"></i>`).join('');
   if (p.tipus === 'cartell' && pinta.darrer === i && $('#cartell-dreta')) $('#cartell-dreta').innerHTML = cartellDreta(p, i);   // el carrusel no es recarrega
-  else $('#escenari').innerHTML = RENDER[p.tipus](p, i);
+  else $('#escenari').innerHTML = RENDER[p.tipus](p, i) + (p.debat ? `<div class="panell-debat" id="panell-debat" hidden><span class="seccio">💬 Per debatre</span>${p.debat.map(q => `<p>${esc(q)}</p>`).join('')}</div>` : '');
   pinta.darrer = i;
+  $('#b-debat').hidden = !p.debat;
   if (p.tipus === 'portada') { const q = $('#qr'); if (window.QRCode && q) new QRCode(q, { text: `${MOVIL_URL}?c=${sala.codi}`, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M }); }
   requestAnimationFrame(() => requestAnimationFrame(() => document.querySelectorAll('i[data-w]').forEach(e => e.style.width = e.dataset.w + '%')));
   const pendent = votable(p) && !sala.revelats.has(i);
@@ -338,11 +356,14 @@ function endavant() {
 }
 function enrere() { if (sala.i > 0) { sala.i--; pinta(); } }
 $('#b-seguent').onclick = endavant;
+function debat() { const d = $('#panell-debat'); if (!d) return; d.hidden = !d.hidden; if (!d.hidden) d.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+$('#b-debat').onclick = debat;
 $('#b-enrere').onclick = enrere;
 document.addEventListener('keydown', e => {
   if (e.target.closest?.('input,button')) return;
   if (e.code === 'Space' || e.key === 'ArrowRight') { e.preventDefault(); endavant(); }
   if (e.key === 'ArrowLeft') enrere();
+  if (e.key === 'd' || e.key === 'D') debat();
 });
 
 /* ---------- reels: Instagram, TikTok o YouTube, enganxant l'enllaç ---------- */
