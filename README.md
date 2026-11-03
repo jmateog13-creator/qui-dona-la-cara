@@ -23,19 +23,19 @@ Enllaços directes, per exemple per al Moodle (canvia `1234` pel mateix número 
 
 L'objectiu és que en surtin amb **tres idees clares** (última pantalla):
 1. Qui organitza fa servir la teva cara, els teus vídeos i els teus amics: la feina la fas tu.
-2. Al carrer caus segur, i el primer dia. Qui organitza només cau si hi ha investigació, i això passa quan el tema es fa famós, com Blocus. Molts grups semblants segueixen oberts.
+2. Al carrer és molt més fàcil que t'enxampin: ets a primera línia i els teus vídeos són la prova. Qui organitza només cau si hi ha investigació, i això passa quan el tema es fa famós.
 3. Manifestar-se i organitzar-se per defensar els teus drets és legítim. El vandalisme i el saqueig no ho són.
 
 | Bloc | Pantalles | Temps |
 |---|---|---|
 | **Abans de res** | 2 preguntes anònimes | 3 min |
 | **Què va passar** | Reel «Què és Blocus», endevinar quants detinguts eren menors i les dades | 5 min |
-| **La història del Pol** | 5 escenes amb pantalla partida i il·lustracions, 3 votacions «què faries tu?» (inclosa la del grup d'amics); l'organitzador és un personatge que se segueix escena a escena (l'admin · @nitcalenta_bcn) i, al final, el gir: cau només perquè Blocus es fa famós i hi ha investigació, mentre molts altres canals segueixen oberts | 11 min |
+| **La història del Pol** | 5 escenes amb pantalla partida i il·lustracions; l'organitzador és un personatge (l'admin, inventat) amb un comptador que creix; 3 votacions «què faries tu?»; el gir: l'admin cau quan Blocus es fa famós i hi ha investigació | 11 min |
 | **Els cartells** | Els cartells reals (Newtral): quants seguidors tenia qui els va difondre? (uns cent) i com reconèixer la IA | 3 min |
-| **Qui hi guanya? / Qui hi perd?** | Quatre hipòtesis (efecte mirall, oportunisme, fer-se viral, ultradreta) i els culpables fàcils; «Qui hi perd?» | 5 min |
-| **Protestar no és saquejar** | Joc de zona grisa: 6 casos (manifestació, vaga, entrar al canal, gravar la policia, gravar el saqueig, pintada) que voten ✅ ⚠️ ❌ des del mòbil | 4 min |
-| **Desmunta el missatge** | 2 missatges («som molts» i la promesa de premi) i «Els mateixos trucs que una secta»: com capta una secta i com ho feia Blocus | 4 min |
-| **Per acabar** | «Què t'emportes?» (vot anònim) i les tres idees | 3 min |
+| **Qui hi guanya? / Qui hi perd?** | Quatre hipòtesis i els culpables fàcils (des de tots dos costats); «Qui hi perd?» | 5 min |
+| **Protestar no és saquejar** | Zona grisa: 7 casos que voten ✅ ⚠️ ❌ des del mòbil | 4 min |
+| **Els trucs de captació de les sectes** | Taula: com capta una secta i on ho hem vist a la història del Pol | 2 min |
+| **Per acabar** | Les tres idees i tres consells | 1 min |
 
 ## Reels
 
