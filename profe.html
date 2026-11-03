@@ -196,6 +196,8 @@ a{color:var(--pol)}
 .admin{align-self:flex-start;font:700 14px var(--mono);color:#cfd6ee;background:#7b96ff26;border:1px solid #7b96ff55;border-radius:99px;padding:3px 12px}
 .admin b{color:var(--org)}
 .gir-org{border-left:5px solid var(--pol);background:#f5d90a14;border-radius:10px;padding:12px 14px;color:var(--tinta);font-weight:700}
+.taula.secta td:first-child{color:var(--tinta);font-weight:700}
+.taula.secta td:last-child{color:var(--pol)}
 .panell-debat{border:2px dashed var(--org);border-radius:16px;padding:16px 22px;background:#15171f;display:flex;flex-direction:column;gap:10px}
 .panell-debat .seccio{color:var(--org)}
 .panell-debat p{font:800 clamp(22px,2.3vw,32px)/1.25 var(--display);color:#dfe5fb}
@@ -308,6 +310,10 @@ const cartellDreta = (p, i) => `<p class="pregunta" style="font-size:clamp(24px,
   ${sala.revelats.has(i) ? `<p class="revela">${esc(p.resposta)}</p><span class="seccio">Com reconèixer un cartell fet amb IA</span><ul class="senyals">${p.senyals.map(s => `<li>${esc(s)}</li>`).join('')}</ul><p class="font">Font: ${esc(p.font)}</p>` : ''}`;
 
 const RENDER = {
+  secta: p => `<h1 class="titol-mig">${esc(p.titol)}</h1><p class="lede">${esc(p.intro)}</p>
+    <table class="taula secta"><thead><tr><th>Com capta una secta</th><th class="p">Com ho feia Blocus</th></tr></thead>
+    <tbody>${p.files.map(f => `<tr class="entra"><td>${esc(f[0])}</td><td>${esc(f[1])}</td></tr>`).join('')}</tbody></table>
+    <p class="frase" style="max-width:34ch">${esc(p.frase)}</p>`,
   zonagris: (p, i) => {
     const rev = sala.revelats.has(i), EM = ['✅', '⚠️', '❌'];
     return `<h1 class="titol-mig">${esc(p.titol)}</h1><p class="lede">${esc(p.pregunta)}</p>

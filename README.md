@@ -34,7 +34,7 @@ L'objectiu és que en surtin amb **tres idees clares** (última pantalla):
 | **Els cartells** | Els cartells reals (Newtral): quants seguidors tenia qui els va difondre? (uns cent) i com reconèixer la IA | 3 min |
 | **Qui hi guanya? / Qui hi perd?** | Quatre hipòtesis (efecte mirall, oportunisme, fer-se viral, ultradreta) i els culpables fàcils; «Qui hi perd?» | 5 min |
 | **Protestar no és saquejar** | Joc de zona grisa: 6 casos (manifestació, vaga, entrar al canal, gravar la policia, gravar el saqueig, pintada) que voten ✅ ⚠️ ❌ des del mòbil | 4 min |
-| **Desmunta el missatge** | 2 missatges: «som molts» i la promesa de premi | 2 min |
+| **Desmunta el missatge** | 2 missatges («som molts» i la promesa de premi) i «Els mateixos trucs que una secta»: com capta una secta i com ho feia Blocus | 4 min |
 | **Per acabar** | «Què t'emportes?» (vot anònim) i les tres idees | 3 min |
 
 ## Reels

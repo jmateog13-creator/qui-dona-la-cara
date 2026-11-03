@@ -397,6 +397,43 @@
       "explicacio": "Una promesa de premi. Qui la fa no correrà cap risc per complir-la."
     },
     {
+      "tipus": "secta",
+      "seccio": "Desmunta el missatge",
+      "titol": "Els mateixos trucs que una secta",
+      "intro": "Les sectes capten gent amb uns trucs molt concrets. Blocus feia servir exactament els mateixos.",
+      "files": [
+        [
+          "Et fan sentir part d'una família, d'una cosa gran",
+          "«Tots units», «Ja som més de 2.000»"
+        ],
+        [
+          "Un enemic comú: nosaltres contra ells",
+          "«Ens roben el futur»"
+        ],
+        [
+          "Passos petits: «només per mirar»",
+          "Vídeo → QR → canal → xat privat → carrer"
+        ],
+        [
+          "Secret: el que importa, en privat",
+          "«Detalls al xat privat»"
+        ],
+        [
+          "Si dubtes o te'n vas, ets un traïdor",
+          "«No siguis rajat»"
+        ],
+        [
+          "Qui mana no dona la cara",
+          "L'admin, al sofà i amb un àlies"
+        ]
+      ],
+      "frase": "Una secta no et diu que és una secta. Et diu que per fi has trobat el teu lloc.",
+      "debat": [
+        "Quin d'aquests trucs creieu que enganxa més a la vostra edat?",
+        "On més heu vist aquests trucs? (grups, jocs, xarxes…)"
+      ]
+    },
+    {
       "tipus": "pregunta",
       "seccio": "Per acabar",
       "titol": "Què t'emportes?",
@@ -412,7 +449,7 @@
       "tipus": "final",
       "seccio": "Per acabar",
       "titol": "Qui et demana que donis la cara no hi posa la seva.",
-      "trucs": "Pressa, «som molts», premis, «passa-ho» i falsa sensació d'anonimat: són els mateixos trucs que fan servir les estafes per missatge.",
+      "trucs": "Pressa, «som molts», premis, «passa-ho» i falsa sensació d'anonimat: són els mateixos trucs que fan servir les sectes i les estafes per missatge.",
       "consells": [
         "Si no saps qui hi ha darrere, no ho reenviïs",
         "No gravis el saqueig per penjar-lo: és publicitat gratis i una prova contra tu i els teus amics",
